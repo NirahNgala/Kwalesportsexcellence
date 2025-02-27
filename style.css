@@ -192,10 +192,9 @@ nav ul li a:hover {
 }
 
 /* Responsive design */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
   .content {
-      width: 90%;
-      max-width: 95%;
+      width: 100%;
       padding: 15px;
   }
 
@@ -250,26 +249,150 @@ nav ul li a:hover {
 }
 
 .intro h1{
-  font-size: 3em;
+  font-size: 2.8em;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  padding: 30px 20px;
+  padding: 20px;
   line-height: 1.2;
 }
 
 .intro p {
   margin-top: 0;
-  padding: 20px;
+  padding: 10px;
   font-size: 1.1em;
 }
 
-.programs{
-  background-color: #1a6b7e;
-  padding: 50px;
+.programs {
+  padding: 60px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f8f8f8;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.programs h1{
-  align-items: center;
+.programs h1 {
   text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+  font-size: 2.5em;
+}
+
+.sportsforgender,
+.sportstourism,
+.sportsnutrition {
+  background-color: white;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  border-left: 5px solid #007bff;
+}
+
+.sportsforgender,
+.sportsnutrition{
+  flex-direction: row;
+}
+.sportstourism {
+  flex-direction: left; /* Reverse direction for sports tourism */
+}
+
+.sportstourism img {
+  margin-left: 0; /* Remove right margin */
+  margin-right: 30px; /* Add left margin */
+  order: -1; /* Move image to the left */
+  flex: 1;
+}
+
+.sportstourism .program-content {
+  order: 1; /* Keep text on the right */
+  flex: 1;
+}
+
+.sportsforgender:hover,
+.sportstourism:hover,
+.sportsnutrition:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.sportsforgender h2,
+.sportstourism h2,
+.sportsnutrition h2 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.6em;
+  letter-spacing: 0.8px;
+}
+
+.sportsforgender p,
+.sportstourism p,
+.sportsnutrition p {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.sportsforgender img,
+.sportsnutrition img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 12px;
+  margin-left: 30px;
+  object-fit: cover;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  order: 2;
+}
+
+.sportstourism img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 12px;
+  margin-right: 30px;
+  object-fit: cover;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  order: -1;
+}
+
+.sportsforgender .program-content,
+.sportstourism .program-content,
+.sportsnutrition .program-content {
+  flex: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sportsforgender,
+  .sportstourism,
+  .sportsnutrition {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .sportsforgender img,
+  .sportstourism img,
+  .sportsnutrition img {
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 15px;
+      max-width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sportsforgender img,
+  .sportstourism img,
+  .sportsnutrition img {
+      max-width: 300px;
+  }
+
+  .programs h1 {
+      font-size: 3em;
+  }
 }
 
 @media (max-width: 768px) {
@@ -318,7 +441,8 @@ nav ul li a:hover {
 @media(min-aspect-ratio: 16/9){
   .banner video{
       width: 100%;
-      height: auto;
+      height: 50%;
+      object-fit: cover;
   }
 }
 
@@ -446,6 +570,7 @@ nav ul li a:hover {
   width: 100%;
   border-radius: 20px;
   padding: 20px;
+  /*on small screens make it scrollable*/
 }
 
 /* Heading Styling */
@@ -466,9 +591,8 @@ nav ul li a:hover {
   padding: 50px;
   gap: 20px;
 }
-
 .sponsors ul li {
-  display: flex;
+  display: inline-flex;
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
@@ -476,13 +600,13 @@ nav ul li a:hover {
 
 /* Make images circular and properly sized */
 .sponsors ul li img {
-  width: 150px; /* Default size */
-  height: 150px;
+  width: 100px; /* Default size */
+  height: 100px;
   border-radius: 50%; /* Makes them circular */
   object-fit: contain; /* Ensures logos fit inside without distortion */
   background-color: rgb(255, 255, 255); /* Optional: Helps logos stand out */
-  padding: 10px; /* Ensures space inside the circle */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 5px; /* Ensures space inside the circle */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.216);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -495,7 +619,7 @@ nav ul li a:hover {
   .sponsors ul {
     display: grid;
     grid-template-columns: auto;
-    gap: 15px;
+    gap: 10px;
     justify-content: center;
   }
 
@@ -505,7 +629,7 @@ nav ul li a:hover {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .sponsors {
     padding: 20px;
     margin: 20px auto;
@@ -516,7 +640,7 @@ nav ul li a:hover {
   }
 
   .sponsors ul {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
     gap: 10px;
   }
 
@@ -967,12 +1091,12 @@ footer {
   position: relative;
   bottom: 0;
   background: #25262A;
-  color: #fff;
-  padding: 50px 20px;
+  color: #fffffffa;
+  padding: 30px;
   flex: 1;
 }
 .container {
-  width: 90%;
+  width: 100%;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -993,26 +1117,26 @@ footer {
 }
 .col-1 {
   flex-basis: 30%;
-  padding: 10px;
+  padding: 0px;
   margin-bottom: 20px;
 }
 .col-1 img {
-  width: 55px;
-  margin-bottom: 15px;
+  width: 140px;
+  margin: auto;
 }
 .col-1 p {
-  color: #fff;
-  font-size: 15px;
-  line-height: 20px;
+  color: #3268d5;
+  font-size: 20px;
+  line-height: 22px;
 }
 .col-2 {
-  flex-basis: 15%;
+  flex-basis: 34%;
   padding: 10px;
   margin-bottom: 20px;
-
+  line-height: 22px;
 }
 .col-2 h3 {
-  color: #fff;
+  color: #71158a;
   font-size: 20px;
   margin-bottom: 15px;
 }
@@ -1023,7 +1147,7 @@ footer {
   margin-bottom: 10px;
 }
 .col-2 ul li a {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
 }
 .col-3 {
@@ -1032,9 +1156,9 @@ footer {
   margin-bottom: 20px;
 }
 .col-3 h3 {
-  color: #fff;
-  font-size: 20px;
-  margin-bottom: 15px;
+  color: #1265b8;
+  font-size: 17px;
+  margin-bottom:5 0px;
 }
 .col-3 ul {
   list-style: none;
@@ -1045,16 +1169,17 @@ footer {
 .col-3 ul li a {
   color: #fff;
   text-decoration: none;
+  margin-top: 20px;
 }
 .col-4 {
-  flex-basis: 20%;
+  flex-basis: 100%;
   padding: 10px;
   margin-bottom: 20px;
 }
 .col-4 h3 {
-  color: #fff;
+  color: #09809598;
   font-size: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 form{
   display: flex;
@@ -1064,7 +1189,7 @@ form{
   padding-bottom: 20px;
 }
 form .far{
-  color: #ccc;
+  color: #ffffff;
   margin-right: 10px;
 }
 form input{
@@ -1075,7 +1200,7 @@ form input{
   outline: none;
 }
 form button{
-  background: transparent;
+  background-color: #7e9ae8;
   border: none;
   color: #fff;
   cursor: pointer;
@@ -1098,8 +1223,8 @@ form button{
   transition: all 0.5s ease;
 }
 .social-icons a:hover{
-  background: #e701e7;
-  color: #fff;
+  background: #000000;
+  color: #00000064;
   transition: all 0.5s ease;
 }
 .footer-2{
