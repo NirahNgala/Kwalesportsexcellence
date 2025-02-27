@@ -240,25 +240,67 @@ nav ul li a:hover {
 }
 }
 
-.intro{
+.intro {
   padding: 20px;
-  /*background-image: url(assets/jumping.jpg);
-  background-size: cover;  Or contain, auto, 100% 100%, etc. */
-  background-position: center; /* Or top, bottom, left, right, etc. */
-  background-repeat: no-repeat; /* Prevents image tiling */
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Optional: Background image handling */
+  /* background-image: url(assets/jumping.jpg); */
+  /* background-size: cover; */
 }
 
-.intro h1{
+.intro h1 {
   font-size: 2.8em;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   padding: 20px;
   line-height: 1.2;
+  /* Make heading responsive */
+  font-size: calc(2em + (2.8 - 2) * ((100vw - 320px) / (1200 - 320))); /*Responsive font size*/
 }
 
 .intro p {
   margin-top: 0;
   padding: 10px;
   font-size: 1.1em;
+  /* Make paragraph responsive */
+  font-size: calc(1em + (1.1 - 1) * ((100vw - 320px) / (1200 - 320))); /*Responsive font size*/
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .intro {
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .intro h1 {
+    padding: 15px; /* Adjust padding for smaller screens */
+    text-align: center; /* Center text on smaller screens */
+    font-size: calc(1.8em + (2.8 - 1.8) * ((100vw - 320px) / (768 - 320))); /* Smaller font for tablets */
+  }
+
+  .intro p {
+    padding: 10px; /* Adjust padding for smaller screens */
+    text-align: center;/* center text on smaller screens */
+  }
+}
+
+/* Optional: Further adjustments for very small screens */
+@media (max-width: 480px) {
+  .intro h1 {
+    font-size: calc(1.6em + (2.8 - 1.6) * ((100vw - 320px) / (480 - 320))); /* Even smaller font for phones */
+    padding: 10px;
+  }
+    .intro p {
+        font-size: calc(0.9em + (1.1 - 0.9) * ((100vw - 320px) / (480 - 320)));
+        padding: 5px;
+    }
+}
+
+/*Optional background image responsive handling*/
+@media (max-width: 600px){
+    .intro{
+        background-size: cover; /* or contain, or auto, choose what suits the image best on mobile */
+    }
 }
 
 .programs {
