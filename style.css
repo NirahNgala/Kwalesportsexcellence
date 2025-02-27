@@ -239,11 +239,12 @@ nav ul li a:hover {
     font-size: 13px;
 }
 }
+/* Default styles for larger screens */
 .intro {
   padding: 20px;
   background-position: center;
   background-repeat: no-repeat;
-  text-align: center; /* Centers text by default */
+  text-align: center;
 }
 
 .intro h1 {
@@ -259,14 +260,14 @@ nav ul li a:hover {
   font-size: clamp(1rem, 3vw, 1.1rem);
 }
 
-/* Tablets & Small Screens */
+/* Media Query for Devices with Max Width 768px */
 @media (max-width: 768px) {
   .intro {
     padding: 15px;
+    text-align: center; /* Center text on smaller screens */
   }
 
   .intro h1 {
-    text-align: center;
     font-size: clamp(2rem, 6vw, 2.5rem);
     padding: 15px;
   }
@@ -277,14 +278,14 @@ nav ul li a:hover {
   }
 }
 
-/* Mobile Devices */
+/* Media Query for Devices with Max Width 480px */
 @media (max-width: 480px) {
   .intro {
     padding: 10px;
   }
 
   .intro h1 {
-    font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
     line-height: 1.1;
     padding: 10px;
   }
@@ -295,12 +296,6 @@ nav ul li a:hover {
   }
 }
 
-/* Large Screens */
-@media (min-width: 1200px) {
-  .intro h1 {
-    font-size: 5em;
-  }
-}
 
 .programs {
   padding: 80px;
