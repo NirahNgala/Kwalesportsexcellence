@@ -10,16 +10,14 @@
 
 body {
   padding: 0;
+  box-sizing: border-box;
   margin: 0;
-  font-family: "comic sans MS";
+  font-family: "arial sans-serif";
   cursor: pointer;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 nav {
-  padding: 10px 2%;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -241,23 +239,20 @@ nav ul li a:hover {
 }
 /* Default styles for larger screens */
 .intro {
-  padding: 20px;
-  background-position: center;
-  background-repeat: no-repeat;
   text-align: center;
 }
 
 .intro h1 {
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-size: smaller;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  padding: 20px;
+  padding: 10px;
   line-height: 1.2;
 }
 
 .intro p {
   margin-top: 0;
   padding: 10px;
-  font-size: clamp(1rem, 3vw, 1.1rem);
+  font-size: 1.2em;
 }
 
 /* Media Query for Devices with Max Width 768px */
@@ -268,8 +263,8 @@ nav ul li a:hover {
   }
 
   .intro h1 {
-    font-size: clamp(2rem, 6vw, 2.5rem);
-    padding: 15px;
+    font-size: .8em;
+    padding: 10px;
   }
 
   .intro p {
@@ -285,17 +280,16 @@ nav ul li a:hover {
   }
 
   .intro h1 {
-    font-size: clamp(1.6rem, 6vw, 2.2rem);
-    line-height: 1.1;
+    font-size: 0.8em;
+    line-height: 0.9;
     padding: 10px;
   }
 
   .intro p {
-    font-size: clamp(0.9rem, 3.5vw, 1rem);
+    font-size: .8 ;
     padding: 5px;
   }
 }
-
 
 .programs {
   padding: 80px;
