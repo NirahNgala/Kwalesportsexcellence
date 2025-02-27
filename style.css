@@ -243,88 +243,65 @@ nav ul li a:hover {
   padding: 20px;
   background-position: center;
   background-repeat: no-repeat;
+  text-align: center; /* Centers text by default */
 }
 
 .intro h1 {
-  font-size: 2.8em;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   padding: 20px;
   line-height: 1.2;
-  font-size: clamp(1.8rem, 5vw, 2.8rem); /* Responsive with clamp */
 }
 
 .intro p {
   margin-top: 0;
   padding: 10px;
-  font-size: 1.1em;
-  font-size: clamp(1rem, 3vw, 1.1rem); /* responsive with clamp */
+  font-size: clamp(1rem, 3vw, 1.1rem);
 }
 
+/* Tablets & Small Screens */
 @media (max-width: 768px) {
   .intro {
     padding: 15px;
   }
 
   .intro h1 {
-    padding: 15px;
     text-align: center;
+    font-size: clamp(2rem, 6vw, 2.5rem);
+    padding: 15px;
   }
 
   .intro p {
-    padding: 10px;
     text-align: center;
+    padding: 10px;
   }
 }
 
+/* Mobile Devices */
 @media (max-width: 480px) {
-  .intro h1 {
+  .intro {
     padding: 10px;
   }
-  .intro p {
-    padding: 5px;
-  }
-}
-
-/* Extra small screens */
-@media (max-width: 375px) {
-  .intro {
-    padding: 10px; /* Reduced padding */
-  }
 
   .intro h1 {
-    font-size: clamp(1.6rem, 6vw, 2.4rem); /* Further reduce font size */
-    line-height: 1.1; /* Reduced line height */
-    padding: 5px;
+    font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+    line-height: 1.1;
+    padding: 10px;
   }
 
   .intro p {
-    font-size: clamp(0.9rem, 3.5vw, 1rem); /* Further reduce font size */
+    font-size: clamp(0.9rem, 3.5vw, 1rem);
     padding: 5px;
   }
 }
 
-@media (max-width: 768px) {
-  .intro {
-    padding: 50px; /* Increase padding on larger screens */
-    text-align: left; /* Align text left on larger screens */
-  }
-
-  .intro h1 {
-    font-size: 4em; /* Larger font size on larger screens */
-    padding: 50px; /* Restore padding */
-  }
-
-  .intro p {
-    padding: 50px; /* Restore padding */
-  }
-}
-
+/* Large Screens */
 @media (min-width: 1200px) {
-  /* For very large screens */
   .intro h1 {
     font-size: 5em;
   }
 }
+
 .programs {
   padding: 80px;
   font-family: 'Montserrat', sans-serif;
