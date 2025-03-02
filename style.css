@@ -17,7 +17,7 @@ body {
 }
 
 nav {
-  padding: 10px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -300,41 +300,123 @@ nav ul li a:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* subtle button shadow */
 }
 
-
 .programs {
   padding: 20px;
+  max-width: auto;
+  background-color: #ffffff;
 }
 
 .programs h1 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 2em;
 }
 
 .sportsforgender,
 .sportstourism,
 .sportsnutrition {
+  background-color: rgb(247, 245, 245);
+  margin-bottom: 30px;
+  border-radius: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   display: flex;
-  align-items: center; /* Vertically align content */
-  margin-bottom: 20px;
-  border: 1px solid #ddd; /* Optional: Add a border */
-  padding: 15px;
-  border-radius: 8px;
-}
-
-.program-content {
-  flex: 1; /* Allow content to take up available space */
-  padding-right: 20px; /* Add space between text and image */
-}
-
-.programs img {
-  max-width: 300px; /* Limit image width */
+  align-items: flex-start;
+  position: relative;
   height: auto;
-  border-radius: 8px;
 }
 
-.programs-button-container {
-  text-align: center;
+.sportsforgender,
+.sportsnutrition{
+  flex-direction: row;
+}
+.sportstourism {
+  flex-direction: row-reverse; /* Reverse direction for sports tourism */
+}
+
+.sportstourism .program-content {
+  order: 1; /* Keep text on the right */
+  flex: 1;
+}
+
+.sportsforgender:hover,
+.sportstourism:hover,
+.sportsnutrition:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.sportsforgender h2,
+.sportstourism h2,
+.sportsnutrition h2 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.6em;
+  letter-spacing: 0.8px;
+}
+
+.sportsforgender p,
+.sportstourism p,
+.sportsnutrition p {
+  font-size: 1.1em;
+  color: #666;
   margin-top: 20px;
+  line-height: 1.8;
+}
+
+.sportsforgender img,
+.sportstourism img,
+.sportsnutrition img {
+  max-width: 250px;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+  order: 2;
+  flex: 1;
+}
+
+.sportsforgender .program-content,
+.sportstourism .program-content,
+.sportsnutrition .program-content {
+  flex: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sportsforgender,
+  .sportstourism,
+  .sportsnutrition {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .sportsforgender img,
+  .sportstourism img,
+  .sportsnutrition img {
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 15px;
+      max-width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sportsforgender img,
+  .sportstourism img,
+  .sportsnutrition img {
+      max-width: 300px;
+  }
+
+  .programs h1 {
+      font-size: 3em;
+  }
+}
+.programs-button-container {
+  text-align: right; /* Center the button */
+  margin-top: 20px; /* Add some space above the button */
 }
 
 .programs-button {
@@ -351,48 +433,27 @@ nav ul li a:hover {
   background-color: #0056b3;
 }
 
-/* Responsive Styles */
+/* Mobile styles */
 @media (max-width: 768px) {
-  .sportsforgender,
-  .sportstourism,
-  .sportsnutrition {
-    flex-direction: column; /* Stack content vertically on mobile */
-    text-align: center; /* Center text on mobile */
-  }
-
-  .program-content {
-    padding-right: 0; /* Remove padding on mobile */
-    margin-bottom: 15px; /* Add space between text and image */
-  }
-
-  .programs img {
-    max-width: 100%; /* Make images full width on mobile */
-  }
-}
-/* Arrow button mobile styles */
-@media (max-width: 768px) {
-  .programs-button-container {
-    text-align: right;
-    padding-right: 10px;
-  }
-
   .programs-button {
-    width: 200px;
+    padding: 10px 15px; /* Slightly smaller padding */
+    width: 200px; /* Fixed width for the arrow */
     text-align: right;
-    background-color: transparent;
-    border: none;
-    color: #007bff;
-    font-size: 1em;
-    border-radius: 0;
+    background-color: transparent; /* make the background transparent */
+    border: none; /* remove the border */
+    color: #007bff; /* make the text the primary color. */
+    font-size: 1em; /* Increase font size */
+    border-radius: 0; /* remove border radius */
   }
 
   .programs-button:after {
-    content: "→";
+      content: "         →"; /* Unicode arrow character */
+      font-size: 1em;
   }
 
-  .programs-button:hover {
+  .programs-button:hover{
     background-color: transparent;
-    color: #0056b3;
+    color: #449e2d;
   }
 }
 .banner {
@@ -540,40 +601,92 @@ nav ul li a:hover {
   }
 }
 
+
 .sponsors {
   text-align: center;
+  background-color: #ffffff;
+  margin-top: 0;
+  width: 100%;
+  border-radius: 20px;
   padding: 20px;
+  /*on small screens make it scrollable*/
 }
 
+/* Heading Styling */
 .sponsors h1 {
-  margin-bottom: 20px;
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Flexbox for Large Screens */
 .sponsors ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 50px;
+  gap: 20px;
+}
+.sponsors ul li {
+  display: inline-flex;
+  gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.sponsors li {
-  margin: 10px;
+/* Make images circular and properly sized */
+.sponsors ul li img {
+  width: 100px; /* Default size */
+  height: 100px;
+  border-radius: 50%; /* Makes them circular */
+  object-fit: contain; /* Ensures logos fit inside without distortion */
+  background-color: rgb(255, 255, 255); /* Optional: Helps logos stand out */
+  padding: 5px; /* Ensures space inside the circle */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.216);
+  transition: transform 0.3s ease-in-out;
 }
 
-.sponsors img {
-  width: 100px; /* Adjust as needed */
-  height: 100px; /* Adjust as needed */
-  border-radius: 50%;
-  object-fit: contain;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.sponsors ul li img:hover {
+  transform: scale(1.1);
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .sponsors img {
-    max-width: 120px; /* Adjust as needed */
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .sponsors ul {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .sponsors ul li img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 500px) {
+  .sponsors {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .sponsors h1 {
+    font-size: 20px;
+  }
+
+  .sponsors ul {
+    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+    gap: 10px;
+  }
+
+  .sponsors ul li img {
+    width: 100px;
+    height: 100px;
+    padding: 5px;
   }
 }
 /*gallery*/
@@ -1012,3 +1125,19 @@ nav ul li a:hover {
 }
 
 /*footer*/
+
+.footer-2{
+  width: 100%;
+  background: #000000;
+  color: #fff;
+  padding: 40px;
+  text-align: center;;
+}
+
+.footer-2 a{
+  color: #d20ed2;
+}
+
+.footer-2 span{
+  margin-top: 20px;
+}
