@@ -29,12 +29,12 @@ nav .logo {
 }
 nav .logo img {
     border-radius: 50%;
-    height: 60px;
+    height: 100px;
     margin-right: 10px;
 
 }
 nav .logo h1 {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   background: linear-gradient(to right, #1a6b7e 0%, #0e286f 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -47,18 +47,19 @@ nav ul {
 }
 nav ul li {
   margin-left: 1.5rem;
+  font-size: 1.1em;
 }
+
 nav ul li a {
   text-decoration: none;
   color: #000;
-  font-size: 95%;
+  font-size: 100%;
   font-weight: 400;
   padding: 4px 8px;
-  border-radius: 5px;
 }
 
 nav ul li a:hover {
-  background-color: #f5f5f5;
+  background-color: #0dd0f32d;
 }
 
 .hamburger {
@@ -300,32 +301,31 @@ nav ul li a:hover {
 }
 
 .programs {
-  padding: 80px;
-  font-family: 'Montserrat', sans-serif;
-  background-color: #f8f8f8;
+  padding: 20px;
   max-width: auto;
-  background-color: #e175f12f;
+  background-color: #ffffff;
 }
 
 .programs h1 {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   color: #333;
-  font-size: 2.5em;
+  font-size: 2em;
 }
 
 .sportsforgender,
 .sportstourism,
 .sportsnutrition {
-  background-color: white;
-  padding: 30px;
+  background-color: rgb(247, 245, 245);
   margin-bottom: 30px;
+  border-radius: 12px;
+  padding: 10px;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: flex-start;
   position: relative;
-  border-left: 5px solid #000103;
+  height: auto;
 }
 
 .sportsforgender,
@@ -362,7 +362,7 @@ nav ul li a:hover {
 .sportsnutrition p {
   font-size: 1.1em;
   color: #666;
-  margin-bottom: 20px;
+  margin-top: 20px;
   line-height: 1.8;
 }
 
@@ -373,8 +373,8 @@ nav ul li a:hover {
   border-radius: 12px;
   object-fit: cover;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
   order: 2;
+  flex: 1;
 }
 
 .sportstourism img {
@@ -425,28 +425,47 @@ nav ul li a:hover {
   }
 }
 .programs-button-container {
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  text-align: right; /* Center the button */
+  margin-top: 20px; /* Add some space above the button */
 }
 
 .programs-button {
-  background-color: #ffffffae;
-  color: rgb(0, 0, 0.5);
-  padding: 15px 30px;
-  border: #000;
-  font-size: 16px;
-  border-radius: 25px;
-  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
   text-decoration: none;
+  border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 .programs-button:hover {
-  background-color: #000000;
-  color: white;
+  background-color: #0056b3;
 }
 
+/* Mobile styles */
+@media (max-width: 768px) {
+  .programs-button {
+    padding: 10px 15px; /* Slightly smaller padding */
+    width: 200px; /* Fixed width for the arrow */
+    text-align: right;
+    background-color: transparent; /* make the background transparent */
+    border: none; /* remove the border */
+    color: #007bff; /* make the text the primary color. */
+    font-size: 1em; /* Increase font size */
+    border-radius: 0; /* remove border radius */
+  }
+
+  .programs-button:after {
+      content: "         →"; /* Unicode arrow character */
+      font-size: 1em;
+  }
+
+  .programs-button:hover{
+    background-color: transparent;
+    color: #449e2d;
+  }
+}
 .banner {
   position: relative; /* Change from absolute to relative */
   width: 100%;
