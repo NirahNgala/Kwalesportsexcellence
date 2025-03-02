@@ -9,9 +9,9 @@
 }
 
 body {
-  padding: 0;
   box-sizing: border-box;
-  margin: 0;
+  align-items: center;
+  justify-content: center;
   font-family: "arial sans-serif";
   cursor: pointer;
 }
@@ -237,58 +237,66 @@ nav ul li a:hover {
     font-size: 13px;
 }
 }
-/* Default styles for larger screens */
+
 .intro {
-  text-align: center;
+  text-align: center; /* Center the content */
+  padding: 50px 20px; /* Add padding for spacing */
+  background-color: #f8f8f8; /* Light background color */
 }
 
 .intro h1 {
-  font-size: smaller;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  padding: 10px;
-  line-height: 1.2;
+  font-size: 2.5em; /* Larger font size for the heading */
+  line-height: 1.2; /* Adjust line height for better readability */
+  margin-bottom: 20px; /* Add space below the heading */
+  color: #333; /* Darker text color */
 }
 
 .intro p {
-  margin-top: 0;
-  padding: 10px;
-  font-size: 1.2em;
+  font-size: 1.5em; /* Slightly larger paragraph font */
+  color: #666; /* Medium-dark text color for paragraph */
+  margin-bottom: 30px; /* Add space below the paragraph */
 }
 
-/* Media Query for Devices with Max Width 768px */
+.intro .button {
+  display: inline-block; /* Make the link behave like a block element */
+  background-color: #007bff; /* Blue button color */
+  color: #fff; /* White text color */
+  padding: 10px 20px; /* Padding inside the button */
+  text-decoration: none; /* Remove underline from link */
+  border-radius: 35px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.intro .button:hover {
+  background-color: #024b98; /* Darker blue on hover */
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .intro {
-    padding: 15px;
-    text-align: center; /* Center text on smaller screens */
-  }
-
   .intro h1 {
-    font-size: .8em;
-    padding: 10px;
+    font-size: 2.3em; /* Smaller font on smaller screens */
   }
 
   .intro p {
-    text-align: center;
-    padding: 10px;
+    font-size: 1.1em; /* Slightly smaller paragraph font on smaller screens */
   }
 }
 
-/* Media Query for Devices with Max Width 480px */
-@media (max-width: 480px) {
-  .intro {
-    padding: 10px;
-  }
+/* More aesthetic improvements */
+.intro {
+    background: linear-gradient(135deg, #e0f2fe, #f0f8ff); /* subtle gradient background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
+}
 
-  .intro h1 {
-    font-size: 0.8em;
-    line-height: 0.9;
-    padding: 10px;
-  }
+.intro h1 {
+    font-weight: 600; /* slightly bolder font weight */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);/* subtle text shadow */
+}
 
-  .intro p {
-    font-size: .8 ;
-    padding: 5px;
-  }
+.intro .button {
+    font-weight: 500; /* slightly bolder button text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* subtle button shadow */
 }
 
 .programs {
@@ -439,38 +447,7 @@ nav ul li a:hover {
   color: white;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .programs-button {
-      padding: 12px 25px;
-      font-size: 14px;
-  }
-}
-
-@media (max-width: 768px) {
-  .intro {
-      padding: 50px; /* Increase padding on larger screens */
-      text-align: left; /* Align text left on larger screens */
-  }
-
-  .intro h1 {
-      font-size: 4em; /* Larger font size on larger screens */
-      padding: 50px; /* Restore padding */
-  }
-
-  .intro p {
-      padding: 50px; /* Restore padding */
-  }
-}
-
-@media (min-width: 1200px){ /* For very large screens */
-  .intro h1{
-      font-size: 5em;
-  }
-}
-
 .banner {
-  margin-top: 40px;
   position: relative; /* Change from absolute to relative */
   width: 100%;
   height: 50vh; /* Make sure it only covers the viewport height */
