@@ -540,92 +540,40 @@ nav ul li a:hover {
   }
 }
 
-
 .sponsors {
   text-align: center;
-  background-color: #ffffff;
-  margin-top: 0;
-  width: 100%;
-  border-radius: 20px;
   padding: 20px;
-  /*on small screens make it scrollable*/
 }
 
-/* Heading Styling */
 .sponsors h1 {
-  font-size: 24px;
-  margin-top: 0;
-  margin-bottom: 40px;
-  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 20px;
 }
 
-/* Flexbox for Large Screens */
 .sponsors ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
   list-style: none;
-  padding: 50px;
-  gap: 20px;
-}
-.sponsors ul li {
-  display: inline-flex;
-  gap: 20px;
+  padding: 0;
+  margin: 0;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-/* Make images circular and properly sized */
-.sponsors ul li img {
-  width: 100px; /* Default size */
-  height: 100px;
-  border-radius: 50%; /* Makes them circular */
-  object-fit: contain; /* Ensures logos fit inside without distortion */
-  background-color: rgb(255, 255, 255); /* Optional: Helps logos stand out */
-  padding: 5px; /* Ensures space inside the circle */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.216);
-  transition: transform 0.3s ease-in-out;
+.sponsors li {
+  margin: 10px;
 }
 
-.sponsors ul li img:hover {
-  transform: scale(1.1);
+.sponsors img {
+  width: 100px; /* Adjust as needed */
+  height: 100px; /* Adjust as needed */
+  border-radius: 50%;
+  object-fit: contain;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .sponsors ul {
-    display: grid;
-    grid-template-columns: auto;
-    gap: 10px;
-    justify-content: center;
-  }
-
-  .sponsors ul li img {
-    width: 120px;
-    height: 120px;
-  }
-}
-
-@media (max-width: 500px) {
-  .sponsors {
-    padding: 20px;
-    margin: 20px auto;
-  }
-
-  .sponsors h1 {
-    font-size: 20px;
-  }
-
-  .sponsors ul {
-    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
-    gap: 10px;
-  }
-
-  .sponsors ul li img {
-    width: 100px;
-    height: 100px;
-    padding: 5px;
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .sponsors img {
+    max-width: 120px; /* Adjust as needed */
   }
 }
 /*gallery*/
