@@ -16,6 +16,63 @@ body {
   cursor: pointer;
 }
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.column {
+  flex: 0 0 auto;
+  width: 300px;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (min-width: 651px) {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+  }
+  .column {
+    width: 33.33%;
+  }
+}
+
+.OurTeam h2 {
+  text-align: center;
+  padding: 20px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container p{
+  margin-bottom: 20px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+
 nav {
   padding: 10px;
   display: flex;
