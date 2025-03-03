@@ -12,12 +12,12 @@ body {
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  font-family: "arial sans-serif";
+  font-family: Georgia, 'Times New Roman', Times, serif;
   cursor: pointer;
 }
 
 nav {
-  padding: 20px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,7 +29,7 @@ nav .logo {
 }
 nav .logo img {
     border-radius: 50%;
-    height: 100px;
+    height: 50px;
     margin-right: 10px;
 
 }
@@ -689,6 +689,8 @@ nav ul li a:hover {
     padding: 5px;
   }
 }
+
+/*teann*/
 /*gallery*/
 
 .gallery_1 * {
