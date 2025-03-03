@@ -368,6 +368,7 @@ nav ul li a:hover {
 }
 
 .sportsforgender,
+.sportssafety,
 .sportstourism,
 .sportsnutrition {
   background-color: rgb(247, 245, 245);
@@ -383,6 +384,7 @@ nav ul li a:hover {
 }
 
 .sportsforgender,
+.sportssafety,
 .sportsnutrition{
   flex-direction: row;
 }
@@ -396,6 +398,7 @@ nav ul li a:hover {
 }
 
 .sportsforgender:hover,
+.sportssafety,
 .sportstourism:hover,
 .sportsnutrition:hover {
   transform: translateY(-8px);
@@ -403,6 +406,7 @@ nav ul li a:hover {
 }
 
 .sportsforgender h2,
+.sportssafety h2,
 .sportstourism h2,
 .sportsnutrition h2 {
   margin-bottom: 15px;
@@ -412,6 +416,7 @@ nav ul li a:hover {
 }
 
 .sportsforgender p,
+.sportssafety p,
 .sportstourism p,
 .sportsnutrition p {
   font-size: 1.1em;
@@ -421,6 +426,7 @@ nav ul li a:hover {
 }
 
 .sportsforgender img,
+.sportssafety img,
 .sportstourism img,
 .sportsnutrition img {
   max-width: 250px;
@@ -433,6 +439,7 @@ nav ul li a:hover {
 }
 
 .sportsforgender .program-content,
+.sportssafety.program-content,
 .sportstourism .program-content,
 .sportsnutrition .program-content {
   flex: 1;
@@ -442,12 +449,14 @@ nav ul li a:hover {
 @media (max-width: 768px) {
   .sportsforgender,
   .sportstourism,
+  .sportssafety,
   .sportsnutrition {
       flex-direction: column;
       align-items: flex-start;
   }
 
   .sportsforgender img,
+  .sportssafety img,
   .sportstourism img,
   .sportsnutrition img {
       margin-left: 0;
@@ -459,6 +468,7 @@ nav ul li a:hover {
 
 @media (min-width: 1200px) {
   .sportsforgender img,
+  .sportssafety img,
   .sportstourism img,
   .sportsnutrition img {
       max-width: 300px;
