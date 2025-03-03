@@ -392,13 +392,13 @@ nav ul li a:hover {
   flex-direction: row-reverse; /* Reverse direction for sports tourism */
 }
 
-.sportstourism .program-content {
-  order: 1; /* Keep text on the right */
+/*.sportstourism .program-content {
+  order: 1;  Keep text on the right 
   flex: 1;
-}
+}*/
 
 .sportsforgender:hover,
-.sportssafety,
+.sportssafety:hover,
 .sportstourism:hover,
 .sportsnutrition:hover {
   transform: translateY(-8px);
