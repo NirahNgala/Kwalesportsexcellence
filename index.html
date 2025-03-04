@@ -276,51 +276,52 @@
   <!--our team-->
   <div class="OurTeam">
     <h2>Meet the team</h2>
-  </div>
-  <div class="row">
+</div>
+<div class="row">
+    <div class="column">
+        <div class="card">
+            <img src="assets/Allen Riale2.jpg" alt="Allen Riale" style="width:100%">
+            <div class="container">
+                <h2>Riale Mwanzani</h2>
+                <p class="title">Co-Founder & CEO</p>
+                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            </div>
+        </div>
+    </div>
+
     <div class="column">
       <div class="card">
-        <img src="assets/diana.webp" alt="Diana Heri" style="width:100%">
-        <div class="container">
-          <h2>Diana Heri</h2>
-          <p class="title">Co-Founder & Programs Lead</p>
-          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p>example@example.com</p>
-          <p>
-            <a href="https://www.instagram.com/dianaheri" target="_blank"><i class="fab fa-instagram"></i></a>
-          </p>
+          <img src="assets/diana.webp" alt="Diana Heri" style="width:100%">
+          <div class="container">
+              <h2>Diana Heri</h2>
+              <p class="title">Co-Founder & Programs Lead</p>
+              <p class="short-bio">
+                  Diana is the visionary <br> co-founder of Kwale Sports Excellence, <br>bringing a unique blend of leadership...
+                  <a href="#" class="read-more-link">Read More</a>
+              </p>
+              <div class="full-bio" style="display: none;">
+                  <p>
+                      Diana is the visionary co-founder of Kwale Sports Excellence, bringing a unique blend of leadership and nutritional expertise to the organization.
+                      As a registered nutritionist, they are deeply committed to the holistic well-being of our community, especially through our Sports Nutrition Program.
+                      Her passion drives our mission to empower individuals through both physical and nutritional health. <br>
+                      As programs lead, she also drives the creation and execution of our community initiatives.
+                  </p>
+                  <a href="#" class="read-less-link">Read Less</a>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <div class="column">
+        <div class="card">
+            <img src="assets/Rowan McKellar.jpg" alt="Rowan McKellar" style="width:100%">
+            <div class="container">
+                <h2>Rowan McKellar</h2>
+                <p class="title">Mentor</p>
+                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            </div>
         </div>
-      </div>
     </div>
-  <div class="column">
-    <div class="card">
-      <img src="assets/Allen Riale2.jpg" alt="Allen Riale" style="width:100%">
-      <div class="container">
-        <h2>Riale Mwanzani</h2>
-        <p class="title">Co-Founder & CEO</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>example@example.com</p>
-        <p>
-          <a href="https://www.instagram.com/allenriale" target="_blank"><i class="fab fa-instagram"></i></a>
-        </p>
-      </div>
-    </div>
-  </div>
-    
-  <div class="column">
-    <div class="card">
-      <img src="assets/Rowan McKellar.jpg" alt="Rowan McKellar" style="width:100%">
-      <div class="container">
-        <h2>Rowan McKellar</h2>
-        <p class="title">Mentor</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>example@example.com</p>
-        <p>
-          <a href="https://www.instagram.com/rowanmckellar" target="_blank"><i class="fab fa-instagram"></i></a>
-        </p>
-      </div>
-    </div>
-  </div>
 </div>
 
   <!--sponsors-->
@@ -344,6 +345,30 @@
   </div>
 </footer>
   <script src="script.js"></script>
+  <script>
+     document.addEventListener('DOMContentLoaded', function() {
+            const readMoreLinks = document.querySelectorAll('.read-more-link');
+            const readLessLinks = document.querySelectorAll('.read-less-link');
+
+            readMoreLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const fullBio = this.parentElement.nextElementSibling;
+                    this.parentElement.style.display = 'none';
+                    fullBio.style.display = 'block';
+                });
+            });
+
+            readLessLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const shortBio = this.parentElement.previousElementSibling;
+                    this.parentElement.style.display = 'none';
+                    shortBio.style.display = 'block';
+                });
+            });
+        });
+  </script>
  
 </body>
 </html>

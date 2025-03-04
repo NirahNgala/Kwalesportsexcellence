@@ -23,7 +23,6 @@ body {
 .row {
   display: flex;
   flex-wrap: nowrap;
-  height: 450px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -37,12 +36,13 @@ body {
 
 @media screen and (min-width: 651px) {
   .row {
-    display: flex;
-    flex-wrap: wrap;
-    overflow-x: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      overflow-x: hidden;
   }
+
   .column {
-    width: 33.33%;
+      width: 33.33%;
   }
 }
 
@@ -59,11 +59,12 @@ body {
   padding: 0 16px;
 }
 
-.container p{
+.container p {
   margin-bottom: 20px;
 }
 
-.container::after, .row::after {
+.container::after,
+.row::after {
   content: "";
   clear: both;
   display: table;
@@ -71,6 +72,21 @@ body {
 
 .title {
   color: grey;
+}
+
+.full-bio {
+  margin-top: 10px;
+}
+
+.read-more-link,
+.read-less-link {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.short-bio {
+  margin-bottom: 0px;
 }
 
 
