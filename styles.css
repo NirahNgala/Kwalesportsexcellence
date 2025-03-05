@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+.programs {
+    padding: 20px;
+    max-width: auto;
+    background-color: #ffffff;
+  }
+
+.body {
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    cursor: pointer;
+  }
+  
+  .programs h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    font-size: 2em;
+  }
+
+  .sportsandmentalhealth {
+    background-color: rgb(247, 245, 245);
+    margin-bottom: 30px;
+    border-radius: 12px;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    height: auto;
+    flex-direction: row; /* Ensure consistent direction */
+}
+
+.sportsandmentalhealth:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.sportsandmentalhealth h2 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.6em;
+    letter-spacing: 0.8px;
+}
+
+.sportsandmentalhealth p {
+    font-size: 1.1em;
+    color: #666;
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+.sportsandmentalhealth img {
+    max-width: 250px;
+    height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+    order: 2; /* Ensure image is on the right, after text */
+    flex: 1;
+}
+
+.sportsandmentalhealth .program-content {
+    flex: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sportsandmentalhealth {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sportsandmentalhealth img {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 15px;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .sportsandmentalhealth img {
+        max-width: 300px;
+    }
+}
+  
+  .sportsforeducation,
+  .sportsforsocialcauses,
+  .sportsandmentalhealth,
+  .safetraining {
+    background-color: rgb(247, 245, 245);
+    margin-bottom: 30px;
+    border-radius: 12px;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    height: auto;
+  }
+  
+  .sportsforeducation,
+  .sportsforsocialcauses,
+  .safetraining {
+    flex-direction: row;
+  }
+
+  
+  
+  .sportsforeducation:hover,
+  .sportsforsocialcauses:hover,
+  .sportsandmentalhealth:hover,
+  .safetraining:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .sportsforeducation h2,
+  .safetraining h2,
+  .sportsforsocialcauses h2,
+  .sportsandmentalhealth h2 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.6em;
+    letter-spacing: 0.8px;
+  }
+  
+  .sportsforeducation p,
+  .safetraining p,
+  .sportsforsocialcauses p,
+  .sportssafety p {
+    font-size: 1.1em;
+    color: #666;
+    margin-top: 20px;
+    line-height: 1.8;
+  }
+  
+  .sportsforeducation img,
+  .safetraining img,
+  .sportsforsocialcauses img,
+  .sportsandmentalhealth img {
+    max-width: 250px;
+    height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+    order: 2;
+    flex: 1;
+  }
+  
+  .sportsforeducation .program-content,
+  .sportssafety.program-content,
+  .sportsforsocialcauses .program-content,
+  .safetraining .program-content {
+    flex: 1;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .sportsforeducation,
+    .sportsforsocialcauses,
+    .sportsandmentalhealth:hover,
+    .safetraining {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+  
+    .sportsforeducation img,
+    .sportsandmentalhealth img,
+    .sportsforsocialcauses img,
+    .safetraining img {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 15px;
+        max-width: 100%;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .sportsforeducation img,
+    .sportsandmentalhealth img,
+    .sportsforsocialcauses img,
+    .safetraining img {
+        max-width: 300px;
+    }
+  
+    .programs h1 {
+        font-size: 3em;
+    }
+  }
