@@ -317,13 +317,13 @@ nav ul li a:hover {
 .intro {
   padding: 20px;
   text-align: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(assets/rugby.jpg); /* Slightly darker overlay */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(assets/rugby.jpg);
   height: 50%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  background-attachment: fixed; /* Optional: adds parallax effect */
+  background-attachment: fixed;
 }
 
 .intro h1 {
@@ -332,10 +332,10 @@ nav ul li a:hover {
   line-height: 1.2;
   margin-bottom: 20px;
   color: #ffffff;
-  font-weight: 600; /* Increased font weight */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Subtle text shadow */
-  font-family: 'Open Sans', sans-serif; /* Example font family */
-  letter-spacing: 0.5px; /* add letter spacing */
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.5px;
 }
 
 .intro p {
@@ -343,36 +343,70 @@ nav ul li a:hover {
   text-align: left;
   color: #ddcff5;
   margin-bottom: 30px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Subtle text shadow */
-  font-family: 'Open Sans', sans-serif; /* Example font family */
-  letter-spacing: 0.5px; /* add letter spacing */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.5px;
 }
 
-.intro .button {
-  display: inline-block;
-  border-radius: 25px;
-  background-color: green;
-  color: #fff;
-  padding: 10px 20px;
+/* The dropdown container */
+.dropdown {
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  background-color: #449e2d;
+  border: none; /* Remove the border */
+  font-size: 16px;
+  color: white; /* Change button text color to white */
+  padding: 14px 16px;
+  margin: 0;
+  cursor: pointer; /* Add pointer cursor for better UX */
+  border-radius: 5px; /* Round the button corners */
+}
+
+/* Add a darker background color to dropdown button on hover */
+.dropdown:hover .dropbtn {
+  background-color: #388025; /* Darker shade of green */
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  margin-top: 10px;
+  margin-left: 105px;
+  display: none;
+  position: absolute;
+  background-color: white; /* Change dropdown background to white */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px; /* Round dropdown corners */
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  display: block;
+  text-align: center; /* Align text to the left */
+  transition: background-color 0.3s ease; /* Add smooth transition on hover */
 }
 
-.intro .button:hover {
-  background-color: #024b98;
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f0f0f0; /* Light grey hover background */
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .intro h1 {
-      font-size: 2.3em;
-  }
-
-  .intro p {
-      font-size: 1.1em;
-  }
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
+/* Style the caret icon */
+.dropbtn .fa-caret-down {
+  margin-left: 5px;
+}
 .programs {
   padding: 20px;
   max-width: auto;
@@ -386,6 +420,102 @@ nav ul li a:hover {
   font-size: 2em;
 }
 
+.program-content ul {
+  list-style: none;
+}
+
+.sportssafety {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 1100px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff; /* Brighter background */
+  font-family: 'Arial', sans-serif; /* Cleaner font */
+}
+
+.program-content {
+  flex: 2;
+  padding-right: 50px;
+}
+.sportssafety {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 1100px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  font-family: 'Arial', sans-serif;
+}
+
+.program-content {
+  padding: 30px;
+  text-align: center;
+}
+
+.sportssafety h2 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2.4em;
+  font-weight: 600;
+}
+
+.sportssafety p {
+  color: #34495e;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  font-size: 1.1em;
+}
+
+.styled-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 15px;
+  text-align: left;
+  display: inline-block;
+}
+
+.styled-list li {
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.styled-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #3498db;
+}
+
+.safety-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .sportssafety {
+      padding: 30px;
+      margin: 30px auto;
+  }
+
+  .sportssafety h2 {
+      font-size: 2em;
+  }
+
+  .sportssafety p {
+      font-size: 1em;
+  }
+}
 .sportsforgender,
 .sportssafety,
 .sportstourism,
@@ -411,10 +541,6 @@ nav ul li a:hover {
   flex-direction: row-reverse; /* Reverse direction for sports tourism */
 }
 
-/*.sportstourism .program-content {
-  order: 1;  Keep text on the right 
-  flex: 1;
-}*/
 
 .sportsforgender:hover,
 .sportssafety:hover,
@@ -497,6 +623,7 @@ nav ul li a:hover {
       font-size: 3em;
   }
 }
+
 .programs-button-container {
   text-align: right; /* Center the button */
   margin-top: 20px; /* Add some space above the button */
@@ -1204,20 +1331,8 @@ nav ul li a:hover {
   }
 }
 
+
+
 /*footer*/
 
-.footer-2{
-  width: 100%;
-  background: #000000;
-  color: #fff;
-  padding: 40px;
-  text-align: center;;
-}
-
-.footer-2 a{
-  color: #d20ed2;
-}
-
-.footer-2 span{
-  margin-top: 20px;
-}
+/* Google Font CDN Link */
