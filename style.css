@@ -105,11 +105,11 @@ nav .logo {
 }
 nav .logo img {
     border-radius: 50%;
-    height: 60px;
+    height: 92px;
 
 }
 nav .logo h1 {
-  font-size: 1.1rem;
+  font-size: 0.7rem;
   background: linear-gradient(to right, #1a6b7e 0%, #0e286f 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -350,11 +350,11 @@ nav ul li a:hover {
 
 .intro .button {
   display: inline-block;
-  background-color: #007bff;
+  border-radius: 25px;
+  background-color: green;
   color: #fff;
   padding: 10px 20px;
   text-decoration: none;
-  border-radius: 35px;
   transition: background-color 0.3s ease;
 }
 
