@@ -31,3 +31,29 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const readMoreLinks = document.querySelectorAll('.read-more-link');
+    const readLessLinks = document.querySelectorAll('.read-less-link');
+  
+    readMoreLinks.forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const targetId = this.dataset.target;
+        const targetElement = document.getElementById(targetId);
+        targetElement.style.display = 'block';
+        this.style.display = 'none'; // Hide "Read More"
+        this.parentElement.querySelector('.short-bio').style.display = 'none'; //hide the short bio
+      });
+    });
+  
+    readLessLinks.forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const targetId = this.dataset.target;
+        const targetElement = document.getElementById(targetId);
+        targetElement.style.display = 'none';
+        this.parentElement.parentElement.querySelector('.read-more-link').style.display = 'inline'; //show read more
+        this.parentElement.parentElement.querySelector('.short-bio').style.display = 'block'; //show the short bio
+      });
+    });
+  });
