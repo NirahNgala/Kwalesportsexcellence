@@ -12,7 +12,8 @@ body {
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  /*font-family: Georgia, 'Times New Roman', Times, serif;*/
+  font-family: 'Arial', sans-serif;
   cursor: pointer;
 }
 
@@ -461,11 +462,9 @@ nav ul li a:hover {
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   background-color: #ffffff;
-  font-family: 'Arial', sans-serif;
 }
 
 .program-content {
-  padding: 30px;
   text-align: center;
 }
 
@@ -527,7 +526,83 @@ nav ul li a:hover {
       font-size: 1em;
   }
 }
-.sportsforgender,
+
+/* ... (Previous CSS remains the same) ... */
+
+.program-entry.sportsforgender {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.program-entry.sportsforgender:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.program-entry.sportsforgender .program-image {
+  flex: 1;
+  text-align: center;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.program-entry.sportsforgender .program-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.program-entry.sportsforgender .program-content {
+  flex: 2;
+}
+
+.program-entry.sportsforgender .program-content h2 {
+  color: #009688;
+  margin-bottom: 15px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .program-entry.sportsforgender {
+      flex-direction: column;
+  }
+
+  .program-entry.sportsforgender:nth-child(even) {
+      flex-direction: column;
+  }
+
+  .program-entry.sportsforgender .program-image,
+  .program-entry.sportsforgender .program-content {
+      flex: 1;
+      width: 100%;
+  }
+}
+
+.sportsnutrition .program-image {
+  text-align: center;
+  margin: 20px auto; /* Add space around the image */
+  max-width: 500px; /* Adjust the maximum width as needed */
+}
+
+.sportsnutrition .program-image img {
+  width: 100%; /* Make the image take up the full width of its container */
+  height: auto;
+  border-radius: 8px;
+}
+
+.sportsnutrition .program-content h2 {
+  color: #009688; /* Change header color to a different green */
+}
+
+
+
 .sportssafety,
 .sportstourism,
 .sportsnutrition {
@@ -543,7 +618,6 @@ nav ul li a:hover {
   height: auto;
 }
 
-.sportsforgender,
 .sportssafety,
 .sportsnutrition{
   flex-direction: row;
@@ -600,7 +674,7 @@ nav ul li a:hover {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .sportsforgender,
+  
   .sportstourism,
   .sportssafety,
   .sportsnutrition {
@@ -619,7 +693,7 @@ nav ul li a:hover {
 }
 
 @media (min-width: 1200px) {
-  .sportsforgender img,
+
   .sportssafety img,
   .sportstourism img,
   .sportsnutrition img {
