@@ -424,8 +424,9 @@ nav ul li a:hover {
 .program-content ul {
   list-style: none;
 }
-
-.sportssafety {
+.sportssafety,
+.sportsforsocialcauses,
+.safetraining {
   display: flex;
   align-items: center;
   padding: 40px;
@@ -452,7 +453,9 @@ nav ul li a:hover {
   height: auto;
   border-radius: 8px;
 }
-.sportssafety {
+.sportssafety,
+.sportsforsocialcauses,
+.safetraining {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -461,25 +464,31 @@ nav ul li a:hover {
   max-width: 1100px;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  background-color: #ffffff;
+  
 }
 
 .program-content {
   text-align: center;
 }
 
-.sportssafety h2 {
-  color: #2c3e50;
+.sportssafety h2,
+.sportsforsocialcauses h2,
+.safetraining h2,
+.sportsandmentalhealth h2 {
+  color: #009688;
   margin-bottom: 30px;
-  font-size: 2.4em;
   font-weight: 600;
 }
 
-.sportssafety p {
+.sportssafety p,
+.sportsandmentalhealth,
+.sportsforsocialcauses p,
+.safetraining p {
   color: #34495e;
   line-height: 1.8;
   margin-bottom: 25px;
   font-size: 1.1em;
+  margin-top: 20px;
 }
 
 .styled-list {
@@ -509,25 +518,9 @@ nav ul li a:hover {
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  margin-top: 30px;
 }
 
-/* Responsive Design */
-@media (max-width: 900px) {
-  .sportssafety {
-      padding: 30px;
-      margin: 30px auto;
-  }
-
-  .sportssafety h2 {
-      font-size: 2em;
-  }
-
-  .sportssafety p {
-      font-size: 1em;
-  }
-}
-
-/* ... (Previous CSS remains the same) ... */
 
 .program-entry.sportsforgender {
   font-family: 'Arial', sans-serif;
@@ -635,11 +628,10 @@ nav ul li a:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.sportsforgender h2,
-.sportstourism h2,
-.sportsnutrition h2 {
+.sportstourism h2, 
+.sportsforsocialcauses{
   margin-bottom: 15px;
-  color: #333;
+  color: #009688;
   font-size: 1.6em;
   letter-spacing: 0.8px;
 }
@@ -677,12 +669,15 @@ nav ul li a:hover {
   
   .sportstourism,
   .sportssafety,
+  .sportsforsocialcauses,
+  .safetraining,
   .sportsnutrition {
       flex-direction: column;
       align-items: flex-start;
   }
 
   .sportsforgender img,
+  .sportsforsocialcauses img,
   .sportstourism img,
   .sportsnutrition img {
       margin-left: 0;
