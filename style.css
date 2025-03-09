@@ -438,7 +438,18 @@ nav ul li a:hover {
 
 .program-content {
   flex: 2;
-  padding-right: 50px;
+}
+
+.program-image {
+  text-align: center;
+  margin: 20px auto; /* Add vertical margins */
+  max-width: 600px; /* Limit the maximum width of the image */
+}
+
+.program-image img {
+  width: 200%; /* Make the image take up the full width of its container */
+  height: auto;
+  border-radius: 8px;
 }
 .sportssafety {
   display: flex;
@@ -551,7 +562,6 @@ nav ul li a:hover {
 }
 
 .sportsforgender h2,
-.sportssafety h2,
 .sportstourism h2,
 .sportsnutrition h2 {
   margin-bottom: 15px;
@@ -561,7 +571,6 @@ nav ul li a:hover {
 }
 
 .sportsforgender p,
-.sportssafety p,
 .sportstourism p,
 .sportsnutrition p {
   font-size: 1.1em;
@@ -571,7 +580,6 @@ nav ul li a:hover {
 }
 
 .sportsforgender img,
-.sportssafety img,
 .sportstourism img,
 .sportsnutrition img {
   max-width: 250px;
@@ -601,7 +609,6 @@ nav ul li a:hover {
   }
 
   .sportsforgender img,
-  .sportssafety img,
   .sportstourism img,
   .sportsnutrition img {
       margin-left: 0;
