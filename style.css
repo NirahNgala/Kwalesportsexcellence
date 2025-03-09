@@ -1429,12 +1429,10 @@ footer {
   justify-content: space-around;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 .footer-section {
   width: 30%;
-  padding: 0 20px;
 }
 
 footer h4 {
@@ -1519,8 +1517,8 @@ footer a:hover {
   }
 
   .footer-section {
-    width: 90%; /* Full width on smaller screens */
-    margin-bottom: 30px; /* Add margin between sections */
+    width:110%; /* Full width on smaller screens */
+    margin-bottom: 0px; /* Add margin between sections */
     text-align: center; /* Center text */
   }
 }
