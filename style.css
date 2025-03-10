@@ -1577,7 +1577,7 @@ nav ul li a:hover {
 }
 
 footer h4 {
-  margin-bottom: 25px;
+  margin: 25px;
   font-size: 1.3rem;
   font-weight: 600;
   color: #868686;
@@ -1599,7 +1599,7 @@ footer li {
 }
 
 footer a {
-  color: #555;
+  color: #c7c7c7;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -1641,14 +1641,6 @@ footer a:hover {
   color: #007bff; /* Icon color */
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  /* ... (rest of your media queries) ... */
-}
-
-@media (max-width: 480px) {
-  /* ... (rest of your media queries) ... */
-}
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
@@ -1675,6 +1667,9 @@ footer a:hover {
     margin-right: 10px;
     font-size: 1.2rem;
   }
+}
+.footer {
+  background-color: #000;
 }
 
 /* Google Font CDN Link */
