@@ -76,4 +76,45 @@ document.addEventListener('DOMContentLoaded', function() {
       currentTestimonial = (currentTestimonial + 1) % testimonials.length;
       showTestimonial(currentTestimonial);
   }, 5000);
-  
+
+//impact metrics
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to animate the counters
+  function animateCounters() {
+      const counters = document.querySelectorAll('.counter');
+      const speed = 200;
+
+      counters.forEach(counter => {
+          const updateCount = () => {
+              const target = +counter.getAttribute('data-target');
+              const count = +counter.innerText;
+              const increment = target / speed;
+
+              if (count < target) {
+                  counter.innerText = Math.ceil(count + increment);
+                  setTimeout(updateCount, 30);
+              } else {
+                  counter.innerText = target;
+              }
+          };
+
+          updateCount();
+      });
+  }
+
+  // Intersection Observer to trigger the animation when the section enters the viewport
+  const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              animateCounters();
+              observer.unobserve(entry.target); // Stop observing after animation starts
+          }
+      });
+  }, {
+      threshold: 0.5 // Trigger when 50% of the element is visible
+  });
+
+  // Start observing the impact container
+  const impactSection = document.querySelector('.impact-container');
+  observer.observe(impactSection);
+});
