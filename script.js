@@ -57,3 +57,23 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
+
+  let currentTestimonial = 0;
+  const testimonials = document.querySelectorAll(".testimonial-card");
+  const dots = document.querySelectorAll(".dot");
+  
+  function showTestimonial(index) {
+      testimonials.forEach((t, i) => {
+          t.classList.remove("active");
+          dots[i].classList.remove("active");
+      });
+      testimonials[index].classList.add("active");
+      dots[index].classList.add("active");
+      currentTestimonial = index;
+  }
+  
+  setInterval(() => {
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      showTestimonial(currentTestimonial);
+  }, 5000);
+  
