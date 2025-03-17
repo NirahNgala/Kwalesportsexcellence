@@ -1,14 +1,15 @@
-// Hamburger Menu
-const mobileNav = document.querySelector(".hamburger");
-const navbar = document.querySelector(".menubar");
-
-const toggleNav = () => {
-  navbar.classList.toggle("active");
-  mobileNav.classList.toggle("hamburger-active");
-};
-
-mobileNav.addEventListener("click", () => toggleNav());
-
+// Function to toggle the mobile menu and hamburger icon
+function toggleMenu() {
+    document.querySelector('.menubar').classList.toggle('active');
+    document.querySelector('.hamburger').classList.toggle('active');
+  }
+  
+  // Function to close the mobile menu when the close button (×) is clicked
+  function closeMenu() {
+    document.querySelector('.menubar').classList.remove('active');
+    document.querySelector('.hamburger').classList.remove('active');
+  }
+  
 // Gallery (Plain JavaScript)
 document.addEventListener("DOMContentLoaded", function () {
   const galleryContainer = document.querySelector('[unique-script-id="w-w-dm-id"]');

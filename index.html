@@ -1,61 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>KWALE SPORTS EXCELLENCE</title>
-    <link rel="stylesheet" type="text/css" target="_blank" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-  </head>
-  <body>
-    <nav>
-      <div class="logo">
-        <img src="assets/kwalesportslogo.jpg" alt="logo" />
-        <h1>Kwale Sports Excellence</h1>
-      </div>
-      <ul>
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="programs.html">Programs</a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/kwalesportsexcellence/?utm_source=ig_web_button_share_sheet">Blog</a>
-        </li>
-        <li>
-          <a href="team.html">Our Team</a>
-        </li>
-        <li>
-          <a href="about.html">About Us</a>
-        </li>
-      </ul>
-      <div class="hamburger">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
-      </div>
-    </nav>
-    <div class="menubar">
-      <ul>
-        <li>
-          <a href="programs.html">Programs</a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/kwalesportsexcellence/?utm_source=ig_web_button_share_sheet">Blog</a>
-        </li>
-        <li>
-          <a href="team.html">Our Team</a>
-        </li>
-        <li>
-          <a href="http://">About Us</a>
-        </li>
-        <li>
-          <a href="http://">Get Involved</a>
-        </li>
-      </ul>
+    <title>Kwale Sports <br> Excellence</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="assets/kwalesportslogo.jpg" alt="Logo">
+      <h1>Kwale<br>Sports Excellence</h1>
     </div>
+  
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  
+    <div class="menubar">
+      <div class="logo">
+        <img src="assets/kwalesportslogo.jpg" alt="Logo">
+        <h1>Kwale <br> Sports Excellence</h1>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <!-- Close Button -->
+      <span class="close-btn" onclick="closeMenu()"></span>
+    </div>
+  </nav>
+  
     <div class="intro">
       <h1>We are a community based Organisation (CBO) in Kwale County, creating an enabling 
         environment where sports can effectively be used as a social and economic resource.</h1>
@@ -475,6 +454,7 @@
                 });
             });
         });
+  
   </script>
  
 </body>
