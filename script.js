@@ -3,15 +3,28 @@ function toggleMenu() {
     document.querySelector('.hamburger').classList.toggle('active');
   }
   
-  document.addEventListener('DOMContentLoaded', function() {
-    const dropdowns = document.querySelectorAll('.menubar .dropdown > a');
-    dropdowns.forEach(dropdown => {
-      dropdown.addEventListener('click', function(event) {
-        event.preventDefault();
-        this.parentElement.classList.toggle('active');
-      });
-    });
-  });
+// Toggle dropdown menu on click
+function toggleDropdown(event, menuName) {
+    event.preventDefault(); // Prevent default action (anchor tag)
+    const dropdown = document.querySelector(`li.dropdown.${menuName}`);
+    dropdown.classList.toggle('active'); // Show or hide the dropdown
+  }
+  
+  // Open slide-in page and load content
+  function openPage(pageName) {
+    // Load content dynamically based on the clicked page name
+    const slideContent = document.getElementById('slide-content');
+    slideContent.innerHTML = `<h1>${pageName.replace('-', ' ').toUpperCase()}</h1><p>Content for ${pageName.replace('-', ' ')}</p>`;
+  
+    // Show the slide-in page
+    document.getElementById('slide-page').classList.add('active');
+  }
+  
+  // Close the slide-in page
+  function closePage() {
+    // Hide the slide-in page
+    document.getElementById('slide-page').classList.remove('active');
+  }
   
 // Gallery (Plain JavaScript)
 document.addEventListener("DOMContentLoaded", function () {

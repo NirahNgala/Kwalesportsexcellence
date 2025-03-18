@@ -161,7 +161,58 @@ ul li a:hover {
   padding: 15px;
 }
 
+/* Slide-in page styling */
+.slide-page {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Initially hidden off the screen */
+  width: 80%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  transition: right 0.5s ease-in-out;
+  padding: 20px;
+  overflow-y: auto;
+}
 
+.slide-page.active {
+  right: 0; /* Slide in */
+}
+
+.slide-content {
+  padding: 20px;
+}
+
+.close-slide {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  flex-direction: column;
+}
+
+.dropdown.active .dropdown-menu {
+  display: flex;
+}
+
+/* Show dropdown menu on hover or click */
+ul li a:hover {
+  color: #007bff;
+}
 
 .donate-btn {
   margin-top: auto;
@@ -225,6 +276,7 @@ ul li a:hover {
 .menubar .dropdown.active .dropdown-menu {
   display: block;
 }
+
 
 *, *:before, *:after {
   box-sizing: inherit;
