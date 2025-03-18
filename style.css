@@ -192,24 +192,18 @@ ul li a:hover {
   cursor: pointer;
 }
 
-
-/* Dropdown menu styles */
-.dropdown-menu {
+/* Mobile dropdown menu behavior */
+.menubar .dropdown .dropdown-menu {
+  position: static;
+  box-shadow: none;
   display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 180px;
-  flex-direction: column;
 }
 
-.dropdown.active .dropdown-menu {
-  display: flex;
+.menubar .dropdown.active .dropdown-menu {
+  display: block;
 }
 
-/* Show dropdown menu on hover or click */
+/* Show dropdown menu on click (for mobile) */
 ul li a:hover {
   color: #007bff;
 }
@@ -250,6 +244,22 @@ ul li a:hover {
 
   .menubar ul {
     display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    width: 100%;
+  }
+
+  .menubar ul li {
+    width: 100%;
+  }
+
+  .menubar .dropdown .dropdown-menu {
+    display: none;
+  }
+
+  .menubar .dropdown.active .dropdown-menu {
+    display: block;
+    width: 100%;
   }
 }
 
@@ -276,6 +286,7 @@ ul li a:hover {
 .menubar .dropdown.active .dropdown-menu {
   display: block;
 }
+
 
 
 *, *:before, *:after {
