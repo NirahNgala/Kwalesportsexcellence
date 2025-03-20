@@ -16,17 +16,17 @@
       <li class="dropdown">
         <a href="#" onclick="toggleDropdown(event, 'learn-more')">Learn More <span class="dropdown-icon">&#9656;</span></a>
         <ul class="dropdown-menu">
-          <li><a href="#" onclick="openPage('about-us')">About Us</a></li>
-          <li><a href="#" onclick="openPage('our-impact')">Our Impact</a></li>
-          <li><a href="#" onclick="openPage('programs')">Programs</a></li>
+          <li><a href="#" class="open-slide" data-page="About Us">About Us</a></li>
+          <li><a href="#" class="open-slide" data-page="Our Impact">Our Impact</a></li>
+          <li><a href="#" class="open-slide" data-page="Programs">Programs</a></li>
         </ul>
       </li>
       <li class="dropdown">
         <a href="#" onclick="toggleDropdown(event, 'get-involved')">Get Involved <span class="dropdown-icon">&#9656;</span></a>
         <ul class="dropdown-menu">
-          <li><a href="#" onclick="openPage('volunteer')">Volunteer</a></li>
-          <li><a href="#" onclick="openPage('partner-with-us')">Partner with Us</a></li>
-          <li><a href="#" onclick="openPage('donate')">Donate</a></li>
+          <li><a href="#" class="open-slide" data-page="Volunteer">Volunteer</a></li>
+          <li><a href="#" class="open-slide" data-page="Partner with Us">Partner with Us</a></li>
+          <li><a href="donate.html">Donate</a></li>
         </ul>
       </li>
       <li><a href="#">Membership</a></li>
@@ -46,16 +46,16 @@
         <li class="dropdown">
           <a href="#">Learn More <span class="dropdown-icon">&#9656;</span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Our Impact</a></li>
-            <li><a href="#">Programs</a></li>
+            <li><a href="#" class="open-slide" data-page="About Us">About Us</a></li>
+            <li><a href="#" class="open-slide" data-page="Our Impact">Our Impact</a></li>
+            <li><a href="#" class="open-slide" data-page="Programs">Programs</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#">Get Involved <span class="dropdown-icon">&#9656;</span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Volunteer</a></li>
-            <li><a href="#">Partner with Us</a></li>
+            <li><a href="#" class="open-slide" data-page="Volunteer">Volunteer</a></li>
+            <li><a href="#" class="open-slide" data-page="Partner with Us">Partner with Us</a></li>
             <li><a href="donate.html">Donate</a></li>
           </ul>
         </li>
@@ -69,15 +69,14 @@
   
   <!-- Slide-in page -->
   <div id="slide-page" class="slide-page">
-    <span class="close-slide" onclick="closePage()">X</span>
+    <span class="close-slide" onclick="closeSlidePage()">X</span>
     <div class="slide-content" id="slide-content"></div>
   </div>
-  
   
     <div class="intro">
       <h1>We are a community based Organisation (CBO) in Kwale County, creating an enabling 
         environment where sports can effectively be used as a social and economic resource.</h1>
-      <p>Empowering our youth through sports,physical activity,and healthy living.</p>
+      <p></p>
           <div class="dropdown">
             <button class="dropbtn">Get Involved <i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content">

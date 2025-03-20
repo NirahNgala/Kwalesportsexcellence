@@ -5,19 +5,23 @@ function toggleMenu() {
 // Toggle hamburger menu on mobile
 function toggleMenu() {
   const menubar = document.querySelector('.menubar');
-  menubar.classList.toggle('active'); // Show or hide the mobile menu
+  const hamburger = document.querySelector('.hamburger');
+  menubar.classList.toggle('active');
+  hamburger.classList.toggle('active');
 }
 
 // Toggle dropdown on click for both desktop and mobile
 function toggleDropdown(event, menuName) {
   event.preventDefault();
   const dropdown = document.querySelector(`li.dropdown.${menuName}`);
-  dropdown.classList.toggle('active'); // Toggle dropdown visibility
+  dropdown.classList.toggle('active');
 }
 
 // Open slide-in page and load content
 function openSlidePage(pageName) {
   const slideContent = document.getElementById('slide-content');
+  if (!slideContent) return;
+
   slideContent.innerHTML = `<h1>${pageName}</h1><p>Content for ${pageName} will go here.</p>`;
   document.getElementById('slide-page').classList.add('active');
 }
@@ -26,6 +30,17 @@ function openSlidePage(pageName) {
 function closeSlidePage() {
   document.getElementById('slide-page').classList.remove('active');
 }
+
+// Ensure "Learn More" & "Get Involved" links trigger the slide-in page on both desktop and mobile
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".open-slide").forEach(link => {
+      link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const pageTitle = e.target.dataset.page || "Page";
+          openSlidePage(pageTitle);
+      });
+  });
+});
 
 // Gallery (Plain JavaScript)
 document.addEventListener("DOMContentLoaded", function () {
