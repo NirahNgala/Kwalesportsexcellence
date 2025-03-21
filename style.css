@@ -12,8 +12,8 @@ body {
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  /*font-family: Georgia, 'Times New Roman', Times, serif;*/
-  font-family: 'Arial', sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+ /* font-family: 'Arial', sans-serif;*/
   cursor: pointer;
 }
 
@@ -32,6 +32,24 @@ nav {
   top: 0;
   z-index: 1000;
 }
+@media only screen and (max-width: 768px) {
+  .menubar {
+    display: block; /* Ensure the mobile menu is displayed */
+  }
+  .nav ul {
+    display: none; /* Hide the regular menu on mobile */
+  }
+  .hamburger {
+    display: block; /* Show hamburger icon */
+  }
+  .menubar ul {
+    display: block; /* Ensure the mobile menu appears */
+  }
+  .dropdown-menu {
+    display: none;
+  }
+}
+
 
 .logo {
   border-radius: 50%;
@@ -458,7 +476,7 @@ ul li a:hover {
   padding: 20px;
   text-align: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(assets/netball\ sunset.jpg);
-  height: 50%;
+  height: 80%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -467,7 +485,7 @@ ul li a:hover {
 }
 
 .intro h1 {
-  font-size: 1.5em;
+  font-size: 1.8em;
   text-align: left;
   line-height: 1.2;
   margin-bottom: 20px;
