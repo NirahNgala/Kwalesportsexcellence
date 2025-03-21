@@ -153,31 +153,35 @@ ul li a:hover {
   left: 0;
   width: 100%;
   height: 100vh;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  padding: 20px;
+  padding: 10px 20px;
   overflow: hidden;
 }
 
 .menubar .logo {
-  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .menubar ul {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  gap: 10px; /* Reduce gap to fit better */
+  flex-grow: 1; /* Make menu take up remaining space */
 }
 
 .menubar ul li {
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 .menubar ul li a {
-  font-size: 18px;
-  padding: 15px;
+  font-size: 16px;
+  padding: 10px;
 }
 
 
@@ -198,20 +202,18 @@ ul li a:hover {
   color: #007bff;
 }
 
+/* Keep donate button at the bottom */
 .donate-btn {
-  margin-top: auto;
-  padding: 15px 25px;
+  padding: 12px 20px;
   background-color: #007bffc3;
   color: white;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
-  transition: background-color 0.3s ease;
   width: 80%;
-  max-width: 400px;
+  max-width: 300px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 10px; /* Add some space from the bottom */
 }
 
 .donate-btn:hover {
