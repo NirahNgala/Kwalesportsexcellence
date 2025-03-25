@@ -497,7 +497,7 @@ ul li a:hover {
   gap: 15px;
 }
 
-.btn {
+.intro .btn {
   background-color: #449e2dca;
   color: white;
   padding: 14px 20px;
@@ -506,18 +506,47 @@ ul li a:hover {
   transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #2e6b1e;
+.intro .btn:hover {
+  background-color: #ffffff;
+  color: #000;
 }
 
-.donate {
+.intro .donate {
   background: transparent;
   border: 1px solid rgb(255, 255, 255);
 }
 
-.donate:hover {
+.intro .donate:hover {
   background-color: #ffffff;
   color: #000;
+}
+/* Responsive Adjustments */
+@media (min-width: 1024px) {
+  .intro {
+    padding: 40px;
+  }
+
+  .intro h1 {
+    font-size: 4em;
+  }
+
+  .intro p {
+    font-size: 1.5em;
+  }
+
+  .button-container {
+    justify-content: center;
+    gap: 50px;
+  }
+  .intro .donate:hover {
+    background-color: #ffffff;
+    color: #000;
+  }
+  .intro .btn:hover {
+    background-color: #ffffff;
+    color: #000;
+  }
+
 }
 
 /* featured campaigns */
@@ -617,7 +646,6 @@ ul li a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1000px;
   margin: auto;
   background: rgba(224, 242, 171, 0.527);
   padding: 10px;
@@ -646,7 +674,7 @@ ul li a:hover {
   transition: background 0.3s ease;
 }
 
-.btn:hover {
+.featured-program .btn:hover {
   background: #e64100;
 }
 
@@ -704,6 +732,40 @@ ul li a:hover {
   .text-content h2 { font-size: 2em; }
   .btn { font-size: 16px; }
   .slideshow-container { max-width: 100%; }
+  
+  /* For tablets and larger screens */
+@media (min-width: 768px) {
+  .program-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .text-content {
+    text-align: left;
+    max-width: 50%;
+  }
+
+  .slideshow-container {
+    max-width: 50%;
+  }
+}
+
+/* For laptops and desktops */
+@media (min-width: 1024px) {
+  .featured-program {
+    padding: 80px 50px;
+  }
+
+  .text-content h2 {
+    font-size: 3em;
+  }
+
+  .text-content p {
+    font-size: 1.4em;
+  }
+}
+  
 }
 
 .programs {
@@ -1071,7 +1133,6 @@ ul li a:hover {
 /*metrics*/
 
 .impact-container {
-  max-width: 900px;
   padding: 40px;
   padding-bottom: 0px;
   background: rgb(255, 255, 255);
@@ -1128,67 +1189,69 @@ ul li a:hover {
   }
 }
 
+/* Partners Section */
 .partners {
   background-color: rgb(205, 205, 205);
   text-align: center;
-  padding-top: 30px;
-  position: relative;
+  padding: 50px 20px;
 }
 
 /* Heading Style */
 .partners h2 {
   color: #000;
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
 }
 
-/* Responsive Partners Grid */
+/* Grid Layout for Partners */
 .partners-list {
   display: grid;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 30px;
   justify-content: center;
   align-items: center;
-  max-width: 300px;
+  max-width: 1200px;
   margin: auto;
 }
 
+/* Partner Card */
 .partner {
   background: rgb(255, 255, 255);
-  padding: 15px;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px;
+  text-align: center;
   transition: transform 0.3s ease-in-out;
 }
 
 .partner:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
 }
 
 /* Partner Logo Styling */
 .partner img {
-  width: 100px; /* Or any fixed size you want */
-  height: 100px; /* Make width and height the same for a square */
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  object-fit: cover; /* Crucial for maintaining size */
+  object-fit: cover;
   display: block;
   margin: 0 auto;
 }
 
 .partner p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   margin-top: 10px;
 }
 
 /* Button Styling */
 .partners button {
-  margin: 40px;
-  width: auto;
-  height: 45px;
-  text-align: center;
+  margin-top: 40px;
+  padding: 12px 25px;
   border-radius: 25px;
+  background-color: transparent;
   color: black;
-  border: none;
+  border: 2px solid black;
   font-size: 16px;
   cursor: pointer;
   font-weight: 600;
@@ -1198,51 +1261,41 @@ ul li a:hover {
 .partners button:hover {
   background: rgba(99, 184, 237, 0.9);
   color: rgb(0, 0, 0);
+  border: none;
 }
 
-/* 📱 Responsive Design */
-@media (max-width: 768px) {
+/* Responsive Design */
+
+/* Tablets: Display partners in a 3-column grid */
+@media (min-width: 768px) {
   .partners-list {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust grid for small screens */
-    gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Laptops & Desktops: Display partners in a 4-column grid */
+@media (min-width: 1024px) {
+  .partners-list {
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .partner img {
-    max-width: 100px;
+    width: 140px;
+    height: 140px;
   }
 
-  .partners h2 {
-    font-size: 1.8rem;
+  .partner p {
+    font-size: 1.3rem;
   }
+  .partners button:hover {
+    border: none;
 
-  .partners button {
-    width: 180px;
-    height: 40px;
-    font-size: 14px;
   }
 }
 
-@media (max-width: 480px) {
-  .partners-list {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Smaller items on extra small screens */
-    gap: 10px;
-  }
 
-  .partner img {
-    width: 80px; /* Adjust for smaller screens if needed */
-    height: 80px;
-  }
+/*  Responsive Design */
 
-  .partners h2 {
-    font-size: 1.5rem;
-  }
-
-  .partners button {
-    width: 160px;
-    height: 38px;
-    font-size: 13px;
-  }
-}
 
 
 .sponsors {
