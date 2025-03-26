@@ -152,7 +152,6 @@ ul li a {
   color: #333;
   text-decoration: none;
   font-size: 18px;
-  padding: 10px;
   display: flex;
   align-items: center;
   transition: color 0.3s ease;
@@ -1915,7 +1914,7 @@ ul li a:hover {
 .newsletter {
   background-color: #3e7ca9; /* Kwale Sports Blue */
   color: white;
-  padding: 40px;
+  padding: 20px;
   text-align: center;
   overflow: hidden;
 }
