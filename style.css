@@ -8,6 +8,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
+
 body {
   box-sizing: border-box;
   align-items: center;
@@ -1910,6 +1913,7 @@ ul li a:hover {
   color: white;
   padding: 40px;
   text-align: center;
+  overflow: hidden;
 }
 
 .newsletter-container {
@@ -2001,8 +2005,7 @@ ul li a:hover {
 
 /* Footer Content Layout */
 .footer-container {
-  max-width: 1000px;
-  margin: 0 auto;
+  padding: 10px 20;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -2012,7 +2015,7 @@ ul li a:hover {
 .quick-links-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 5px;
   text-align: left;
 }
 
@@ -2022,12 +2025,16 @@ ul li a:hover {
 
 .quick-links-column ul {
   list-style: none;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
   padding: 0;
+  margin: 0;
 }
 
 .quick-links-column ul li {
-  margin: 5px 0;
+  margin: 3px 0;
 }
 
 .quick-links-column ul li a {
