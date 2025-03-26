@@ -17,30 +17,6 @@ function toggleDropdown(event, menuName) {
   dropdown.classList.toggle('active');
 }
 
-// Open slide-in page and load content
-function openSlidePage(pageName) {
-  const slideContent = document.getElementById('slide-content');
-  if (!slideContent) return;
-
-  slideContent.innerHTML = `<h1>${pageName}</h1><p>Content for ${pageName} will go here.</p>`;
-  document.getElementById('slide-page').classList.add('active');
-}
-
-// Close the slide-in page
-function closeSlidePage() {
-  document.getElementById('slide-page').classList.remove('active');
-}
-
-// Ensure "Learn More" & "Get Involved" links trigger the slide-in page on both desktop and mobile
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".open-slide").forEach(link => {
-      link.addEventListener("click", (e) => {
-          e.preventDefault();
-          const pageTitle = e.target.dataset.page || "Page";
-          openSlidePage(pageTitle);
-      });
-  });
-});
 
 // Gallery (Plain JavaScript)
 document.addEventListener("DOMContentLoaded", function () {
@@ -90,25 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
-
-  let currentTestimonial = 0;
-  const testimonials = document.querySelectorAll(".testimonial-card");
-  const dots = document.querySelectorAll(".dot");
-  
-  function showTestimonial(index) {
-      testimonials.forEach((t, i) => {
-          t.classList.remove("active");
-          dots[i].classList.remove("active");
-      });
-      testimonials[index].classList.add("active");
-      dots[index].classList.add("active");
-      currentTestimonial = index;
-  }
-  
-  setInterval(() => {
-      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-      showTestimonial(currentTestimonial);
-  }, 5000);
 
 //impact metrics
 document.addEventListener("DOMContentLoaded", function () {
