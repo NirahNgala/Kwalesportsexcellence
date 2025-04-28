@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Programs & Campaigns – Kwale Sports Excellence</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      color: #333;
+      background: #fff;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Creative Intro */
+    .intro {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/sables.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .intro h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      font-size: 1.2em;
+    }
+
+    /* Tabs */
+    .tabs {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .back-arrow {
+      display: inline-block;
+      margin: 20px;
+      font-size: 1.2rem;
+      color: var(--primary-color, #0f609b);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .back-arrow i {
+      margin-right: 8px;
+    }
+
+    .back-arrow:hover {
+      color: #a07f2d;
+    }
+
+    /*.tabs button {
+      background: #0f609b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }*/
+  
+  .tab-button {
+  position: relative;
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.tab-button::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 60%;
+  height: 2px;
+  background-color: #0d9488; /* Teal, match your site color */
+  transition: transform 0.3s ease;
+}
+
+.tab-button:hover::after,
+.tab-button.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+
+    .tabs button:hover, .tabs button.active {
+      background: #a07f2d;
+    }
+
+    /* Grid */
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .card {
+      background: #f9f9f9;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      flex: 1 1 300px;
+      max-width: 350px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      color: #0f609b;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .card-content p {
+      color: #555;
+    }
+
+    /* Video Section */
+    .video-section {
+      background: #eee;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .video-section h2 {
+      margin-bottom: 20px;
+    }
+
+    .video-section p {
+      color: #333;
+      font-size: 1.1em;
+      line-height: 1.7;
+      text-align: left;
+      max-width: 800px;
+      margin: auto;
+      margin-bottom: 30px;
+    }
+
+    .video-section video {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 10px;
+    }
+
+    /* Footer */
+    .footer {
+      background: #222;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: #a07f2d;
+    }
+
+    .footer .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .footer ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    .footer h4 {
+      margin-bottom: 10px;
+    }
+
+    @media(max-width: 768px) {
+      .intro h1 {
+        font-size: 2em;
+      }
+
+      .video-section p {
+        font-size: 1em;
+      }
+
+      .video-section h2 {
+        font-size: 2em;
+      }
+
+      .video-section {
+        padding: 40px 10px;
+      }
+
+      .video-section video {
+        max-width: 100%;
+      }
+
+      .footer .footer-columns {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<a href="index.html" class="back-arrow">
+  <i class="fa fa-arrow-left"></i>Back</a>
+
+<!-- Intro Hero -->
+<section class="intro">
+  <h1>Our Work in Action</h1>
+  <p>Where passion meets purpose — discover how sports transform lives across Kwale.</p>
+</section>
+
+<!-- Tabs -->
+<section class="section">
+  <div class="tabs">
+    <button class="tab-button active" data-filter="all">All</button>
+    <button class="tab-button" data-filter="program">Programs</button>
+    <button class="tab-button" data-filter="campaign">Campaigns</button>
+  </div>
+
+  <!-- Grid -->
+  <div class="grid" id="grid">
+    <!-- Cards -->
+    <div class="card program">
+      <img src="assets/sportssafety.jpg" alt="Youth Development" />
+      <div class="card-content">
+        <h3>Safety First</h3>
+        <p>Training camps, mentorship and competitive sports for youth growth.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate inventore neque iure possimus maiores illum laudantium officia optio, similique quia placeat explicabo nemo tempore. Pariatur, consequatur. Provident voluptas error enim.
+        </p>
+      </div>
+    </div>
+
+    <div class="card program">
+      <img src="assets/jumping.jpg" alt="Twalenga Women in Sports" />
+      <div class="card-content">
+        <h3>Twalenga Women in Sports</h3>
+        <p>Empowering women in leadership, coaching, and sports participation.
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam qui quidem, consequuntur harum dolore omnis soluta nam distinctio cupiditate iste id placeat sunt quae neque iusto nostrum esse velit asperiores.
+        </p>
+      </div>
+    </div>
+
+    <div class="card program">
+      <img src="assets/fitnish-media-vAWtNQp37Ss-unsplash.jpg" alt="Youth Development" />
+      <div class="card-content">
+        <h3>Sports nutrition</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime commodi id, hic esse dolorem deserunt neque fugiat aut soluta. Sequi excepturi vitae accusamus officia minus? Labore aperiam nisi autem error..</p>
+      </div>
+    </div>
+
+    <div class="card program">
+      <img src="assets/group with whitemen.webp" alt="Sports Tourism" />
+      <div class="card-content">
+        <h3>Sports Tourism</h3>
+        <p>Beach tournaments promoting travel, culture, and economic growth.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit impedit ullam incidunt non adipisci suscipit voluptate. Autem accusantium eligendi assumenda quasi, id adipisci quisquam et magni libero sunt beatae incidunt?
+        </p>
+      </div>
+    </div>
+
+
+
+    <!-- Save Our Sables Campaign Section -->
+<div class="card campaign">
+  <section class="video-section" style="padding: 60px 20px; background-color: #f9f9f9;">
+    <div style="max-width: 1200px; margin: auto;">
+      <h2 style="text-align: center; color: #0f609b; margin-bottom: 20px;">Save Our Sables Campaign</h2>
+      <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1em; color: #555;">
+        Sports have proven to have the ability to champion social causes around the world. Time and time again, sports have been used to rally communities, raise awareness, and fundraise by providing platforms for important issues.
+        <br><br>
+        The <strong>Save Our Sables</strong> campaign is a coordinated initiative to conserve the rare <strong>Roosevelt Sable Antelope (Hippotragus Niger Roosevelt)</strong>, found only in the <strong>Shimba Hills National Reserve</strong>, Kwale County.
+      </p>
+  
+      
+      <blockquote style="font-style: italic; text-align: center; margin-top: 40px; color: #666; max-width: 700px; margin-left: auto; margin-right: auto;">
+        “The Sable is not just an animal. It is a living memory, a breath of the wild soul of Kwale. If it vanishes, a piece of us goes with it.”
+      </blockquote>
+  
+      <div style="margin-top: 60px; text-align: center;">
+        <video controls poster="assets/ChatGPT Image Apr 24, 2025, 12_36_46 PM.png" style="width: 100%; max-width: 800px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+          <source src="" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+  
+      <div style="margin-top: 60px;">
+  
+        <h3 style="color: #0f609b; margin-bottom: 30px; text-align: center;">Our Campaign Activities</h3>
+  
+        <!-- Activity 1: Cycle for Sables -->
+        <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 60px; flex-wrap: wrap;">
+  
+          <div style="flex: 1;">
+            <h4 style="color: #0f609b;">Cycle for Sables</h4>
+            <p style="color: #555;">
+              A flagship cycling event raising awareness and funds for Sable conservation. The inaugural ride took place on <strong>16th March 2024</strong> led by <strong>Ntsiki Bidii</strong>, rallying the community behind the conservation cause.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Activity 2: Exposure Tours -->
+        <div style="margin-bottom: 60px;">
+          <h4 style="color: #0f609b; margin-bottom: 20px;">Exposure Tours</h4>
+  
+          <!-- Sub-Activity 1: Game Drive -->
+          <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 40px; flex-wrap: wrap;">
+            <img src="assets/tour (2).jpg" alt="Game Drive" style="width: 350px; height: 230px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <div style="flex: 1;">
+              <h5 style="color: #0f609b;">Game Drive</h5>
+              <p style="color: #555;">
+                Guests embark on a thrilling game drive through the Shimba Hills National Reserve to explore its rich biodiversity, spot wildlife, and appreciate the natural habitat of the endangered Roosevelt Sable Antelope.
+              </p>
+            </div>
+          </div>
+  
+          <!-- Sub-Activity 2: Bush Breakfast -->
+          <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; flex-direction: row-reverse;">
+            <img src="assets/picnic.png" alt="Bush Breakfast" style="width: 350px; height: 230px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <div style="flex: 1;">
+              <h5 style="color: #0f609b;">Bush Breakfast</h5>
+              <p style="color: #555;">
+                After the early morning drive, participants enjoy a serene outdoor breakfast surrounded by nature — a chance to connect with the wild while supporting conservation tourism.
+              </p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Activity 3: Sable Antelope Tracking -->
+        <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 60px; flex-wrap: wrap;">
+          <img src="assets/birger-strahl-Qg5N7pzf0A8-unsplash.jpg" alt="Sable Antelope Tracking" style="width: 350px; height: 230px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+          <div style="flex: 1;">
+            <h4 style="color: #0f609b;">Sable Antelope Tracking</h4>
+            <p style="color: #555;">
+              Guided adventures through the reserve to track, observe, and learn about the behavior and movements of the endangered Sable Antelope — creating a deeper appreciation for their conservation.
+            </p>
+          </div>
+        </div>
+  
+        <!-- Activity 4: Community Education Barazas -->
+        <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 60px; flex-wrap: wrap; flex-direction: row-reverse;">
+          <img src="assets/baraza.jpg" alt="Community Education Barazas" style="width: 350px; height: 230px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+          <div style="flex: 1;">
+            <h4 style="color: #0f609b;">Community Education Barazas</h4>
+            <p style="color: #555;">
+              Organizing local forums (barazas) where community members gather to discuss conservation practices, learn the cultural significance of Sables, and pledge to protect Kwale’s natural heritage.
+            </p>
+          </div>
+        </div>
+  
+      </div>
+  
+    </div>
+  </section>
+  
+</div>
+    
+  </div>
+  <div class="card campaign">
+    <img src="assets/sport safety redcross tent.jpg" alt="Sports Safety Campaign" />
+    <div class="card-content">
+      <h3>Sports Safety Campaign</h3>
+      <p>Education, gear, and injury prevention for young athletes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <img src="assets/kwalesportslogo.jpg" alt="Kwale Sports Excellence Logo" class="footer-logo">
+  <p>Kwale Sports Excellence — Empowering Youth Through Sports</p>
+
+  <div class="footer-columns">
+    <div>
+      <h4>About Us</h4>
+      <ul>
+        <li><a href="#">Our Mission</a></li>
+        <li><a href="#">Our Team</a></li>
+        <li><a href="#">Impact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Give</h4>
+      <ul>
+        <li><a href="#">Donate</a></li>
+        <li><a href="#">Sponsorship</a></li>
+        <li><a href="#">Volunteer</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get Involved</h4>
+      <ul>
+        <li><a href="#">Join a Program</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Partner With Us</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="margin-top: 30px;">
+    <p><i class="fa fa-map-marker-alt"></i> Kwale County, Kenya</p>
+    <p><i class="fa fa-envelope"></i> info@kwalesports.org</p>
+    <p><i class="fa fa-phone"></i> +254 712 345678</p>
+  </div>
+</footer>
+
+<script>
+  // Filter logic
+  const buttons = document.querySelectorAll('.tab-button');
+  const cards = document.querySelectorAll('.card');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+
+      cards.forEach(card => {
+        card.style.display = (filter === 'all' || card.classList.contains(filter)) ? 'flex' : 'none';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
