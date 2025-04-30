@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Programs & Campaigns – Kwale Sports Excellence</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
   <style>
     body {
@@ -110,7 +111,7 @@
       justify-content: center;
     }
 
-    .card {
+.card {
       background: #f9f9f9;
       border-radius: 10px;
       overflow: hidden;
@@ -119,7 +120,7 @@
       max-width: 350px;
       display: flex;
       flex-direction: column;
-    }
+}
 
     .card img {
       height: 200px;
@@ -139,7 +140,7 @@
 
     .card-content p {
       color: #555;
-    }
+}
 
     /* Video Section */
     .video-section {
@@ -168,46 +169,6 @@
       border-radius: 10px;
     }
 
-    /* Footer */
-    .footer {
-      background: #222;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .footer-logo {
-      height: 60px;
-      margin-bottom: 10px;
-    }
-
-    .footer a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      color: #a07f2d;
-    }
-
-    .footer .footer-columns {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 30px;
-    }
-
-    .footer ul {
-      list-style: none;
-      padding: 0;
-      text-align: center;
-    }
-
-    .footer h4 {
-      margin-bottom: 10px;
-    }
-
     @media(max-width: 768px) {
       .intro h1 {
         font-size: 2em;
@@ -227,10 +188,6 @@
 
       .video-section video {
         max-width: 100%;
-      }
-
-      .footer .footer-columns {
-        flex-direction: column;
       }
     }
   </style>
@@ -299,7 +256,7 @@
 
     <!-- Save Our Sables Campaign Section -->
     <div class="card campaign">
-      <section class="video-section" style="padding: 60px 20px; background-color: #f9f9f9;">
+      <section class="video-section campaign" style="padding: 60px 20px; background-color: #f9f9f9;">
         <div style="max-width: 1200px; margin: auto;">
           <h2 style="text-align: center; color: #0f609b; margin-bottom: 20px;">Save Our Sables Campaign</h2>
           <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1em; color: #555;">
@@ -316,7 +273,6 @@
           <div style="margin-top: 60px; text-align: center;">
             <video controls poster="assets/ChatGPT Image Apr 24, 2025, 12_36_46 PM.png" style="width: 100%; max-width: 800px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
               <source src="assets/WhatsApp Video 2025-03-03 at 11.12.11_93f555c8.mp4" type="video/mp4">
-              Your browser does not support the video tag.
             </video>
           </div>
   
@@ -326,7 +282,7 @@
 </div>
     
   </div>
-  <div class="">
+  <div class="card campaign">
     <img src="assets/sport safety redcross tent.jpg" alt="Sports Safety Campaign" />
     <div class="card-content">
       <h3>Sports Safety Campaign</h3>
@@ -336,43 +292,8 @@
 </section>
 
 <!-- Footer -->
-<footer class="footer">
-  <img src="assets/kwalesportslogo.jpg" alt="Kwale Sports Excellence Logo" class="footer-logo">
-  <p>Kwale Sports Excellence — Empowering Youth Through Sports</p>
+<div id="footer-placeholder"></div>
 
-  <div class="footer-columns">
-    <div>
-      <h4>About Us</h4>
-      <ul>
-        <li><a href="#">Our Mission</a></li>
-        <li><a href="#">Our Team</a></li>
-        <li><a href="#">Impact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Give</h4>
-      <ul>
-        <li><a href="#">Donate</a></li>
-        <li><a href="#">Sponsorship</a></li>
-        <li><a href="#">Volunteer</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Get Involved</h4>
-      <ul>
-        <li><a href="#">Join a Program</a></li>
-        <li><a href="#">Events</a></li>
-        <li><a href="#">Partner With Us</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div style="margin-top: 30px;">
-    <p><i class="fa fa-map-marker-alt"></i> Kwale County, Kenya</p>
-    <p><i class="fa fa-envelope"></i> info@kwalesports.org</p>
-    <p><i class="fa fa-phone"></i> +254 712 345678</p>
-  </div>
-</footer>
 
 <script>
   // Filter logic
@@ -390,6 +311,14 @@
       });
     });
   });
+  
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading footer:', error));
+
 </script>
 
 </body>
