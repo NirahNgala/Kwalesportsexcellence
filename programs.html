@@ -4,190 +4,142 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Programs & Campaigns – Kwale Sports Excellence</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
   <style>
+    :root {
+      --primary: #0f609b;
+      --accent: #0d9488;
+      --background: #f7fafc;
+      --text: #333;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      color: #333;
-      background: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--background);
+      color: var(--text);
+    }
+
+    a.back-arrow {
+      display: inline-block;
+      margin: 20px;
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    a.back-arrow:hover {
+      color: var(--accent);
+    }
+
+    .intro {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/sables.jpg') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .intro h1 {
+      font-size: 2.5rem;
+      margin: 0 0 10px;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     .section {
-      padding: 60px 20px;
+      padding: 40px 20px;
       max-width: 1200px;
       margin: auto;
     }
 
-    /* Creative Intro */
-    .intro {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/sables.jpg') center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 120px 20px;
-    }
-
-    .intro h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-
-    .intro p {
-      font-size: 1.2em;
-    }
-
-    /* Tabs */
     .tabs {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
-    .back-arrow {
-      display: inline-block;
-      margin: 20px;
-      font-size: 1.2rem;
-      color: var(--primary-color, #0f609b);
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    .back-arrow i {
-      margin-right: 8px;
-    }
-
-    .back-arrow:hover {
-      color: #a07f2d;
-    }
-
-    /*.tabs button {
-      background: #0f609b;
-      color: white;
+    .tab-button {
+      background: none;
       border: none;
-      padding: 10px 20px;
-      margin: 0 5px;
-      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #444;
+      margin: 0 12px;
+      padding: 8px 16px;
+      border-bottom: 2px solid transparent;
       cursor: pointer;
-      transition: background 0.3s;
-    }*/
-  
-  .tab-button {
-  position: relative;
-  padding: 10px 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #333;
-  transition: color 0.3s;
-}
-
-.tab-button::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: -5px;
-  transform: translateX(-50%) scaleX(0);
-  transform-origin: center;
-  width: 60%;
-  height: 2px;
-  background-color: #0d9488; /* Teal, match your site color */
-  transition: transform 0.3s ease;
-}
-
-.tab-button:hover::after,
-.tab-button.active::after {
-  transform: translateX(-50%) scaleX(1);
-}
-
-
-    /* Grid */
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
     }
 
-.card {
-      background: #f9f9f9;
+    .tab-button.active,
+    .tab-button:hover {
+      border-bottom: 2px solid var(--accent);
+      color: var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #fff;
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      flex: 1 1 300px;
-      max-width: 350px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
       display: flex;
       flex-direction: column;
-}
+      transition: transform 0.3s ease;
+    }
 
-    .card img {
-      height: 200px;
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card img,
+    .card video {
       width: 100%;
+      height: 200px;
       object-fit: cover;
+      display: block;
     }
 
     .card-content {
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
     .card-content h3 {
-      color: #0f609b;
-      font-size: 1.5em;
-      margin-bottom: 10px;
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin: 0 0 10px;
     }
 
     .card-content p {
-      color: #555;
-}
-
-    /* Video Section */
-    .video-section {
-      background: #eee;
-      padding: 60px 20px;
-      text-align: center;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      flex-grow: 1;
     }
 
-    .video-section h2 {
-      margin-bottom: 20px;
+    blockquote {
+      font-style: italic;
+      margin: 15px 0 0;
+      color: #666;
+      font-size: 0.9rem;
     }
 
-    .video-section p {
-      color: #333;
-      font-size: 1.1em;
-      line-height: 1.7;
-      text-align: left;
-      max-width: 800px;
-      margin: auto;
-      margin-bottom: 30px;
-    }
-
-    .video-section video {
-      width: 100%;
-      max-width: 800px;
-      border-radius: 10px;
-    }
-
-    @media(max-width: 768px) {
+    @media (max-width: 600px) {
       .intro h1 {
-        font-size: 2em;
+        font-size: 2rem;
       }
 
-      .video-section p {
-        font-size: 1em;
-      }
-
-      .video-section h2 {
-        font-size: 2em;
-      }
-
-      .video-section {
-        padding: 40px 10px;
-      }
-
-      .video-section video {
-        max-width: 100%;
+      .intro p {
+        font-size: 1rem;
       }
     }
   </style>
@@ -195,15 +147,14 @@
 <body>
 
 <a href="index.html" class="back-arrow">
-  <i class="fa fa-arrow-left"></i>Back</a>
+  <i class="fa fa-arrow-left"></i> Back
+</a>
 
-<!-- Intro Hero -->
 <section class="intro">
   <h1>Our Work in Action</h1>
   <p>Where passion meets purpose — discover how sports transform lives across Kwale.</p>
 </section>
 
-<!-- Tabs -->
 <section class="section">
   <div class="tabs">
     <button class="tab-button active" data-filter="all">All</button>
@@ -211,114 +162,99 @@
     <button class="tab-button" data-filter="campaign">Campaigns</button>
   </div>
 
-  <!-- Grid -->
   <div class="grid" id="grid">
-    <!-- Cards -->
+    <!-- Program Cards -->
     <div class="card program">
-      <img src="assets/sportssafety.jpg" alt="Youth Development" />
+      <img src="assets/sportssafety.jpg" alt="Safety First Program" />
       <div class="card-content">
         <h3>Safety First</h3>
-        <p>Training camps, mentorship and competitive sports for youth growth.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate inventore neque iure possimus maiores illum laudantium officia optio, similique quia placeat explicabo nemo tempore. Pariatur, consequatur. Provident voluptas error enim.
+        <p>
+          The <strong>Safety First</strong> initiative, launched on <strong>December 6, 2023</strong>, aims to address sports-related injuries in Kwale County. In partnership with <strong>Base Titanium</strong>, <strong>Kenya Red Cross</strong>, and <strong>FKF Kwale</strong>, we trained 16 athletes from 8 local teams. The program focuses on improving first aid knowledge, providing essential equipment, and creating policies to ensure a safer sports environment.
+        </p>
+        <p>
+          The initiative also promotes women’s sports and aims to bridge the gender funding gap. Research revealed a significant lack of first aid awareness and inadequate sports facilities and equipment. Key recommendations include better training, safer playing environments, and comprehensive health records for athletes.
         </p>
       </div>
     </div>
-
+    
     <div class="card program">
-      <img src="assets/jumping.jpg" alt="Twalenga Women in Sports" />
+      <img src="assets/jumping.jpg" alt="Women in Sports">
       <div class="card-content">
-        <h3>Twalenga Women in Sports</h3>
-        <p>Empowering women in leadership, coaching, and sports participation.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam qui quidem, consequuntur harum dolore omnis soluta nam distinctio cupiditate iste id placeat sunt quae neque iusto nostrum esse velit asperiores.
+        <h3>TWALENGA Women in Sports</h3>
+        <p>
+          Twalenga is more than a program — it’s a movement. We champion women’s participation and leadership in sports by offering mentorships, coaching clinics, and public awareness campaigns. The initiative builds confidence among young girls and creates role models in traditionally male-dominated spaces. Through Twalenga, we’re creating a new generation of empowered women shaping the future of Kenyan sports.
         </p>
-      </div>
-    </div>
+      </div> 
+    </div> 
 
     <div class="card program">
-      <img src="assets/fitnish-media-vAWtNQp37Ss-unsplash.jpg" alt="Youth Development" />
+      <img src="assets/fitnish-media-vAWtNQp37Ss-unsplash.jpg" alt="Sports Nutrition">
       <div class="card-content">
-        <h3>Sports nutrition</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime commodi id, hic esse dolorem deserunt neque fugiat aut soluta. Sequi excepturi vitae accusamus officia minus? Labore aperiam nisi autem error..</p>
+        <h3>Sports Nutrition</h3>
+        <p>
+          Our Sports Nutrition program educates athletes and their families on the role of diet in performance and recovery. From hosting cooking demos using local ingredients to personalized meal plans, we ensure athletes have the fuel they need to excel. The initiative also addresses food insecurity and advocates for balanced nutrition in schools and communities.
+        </p>
+        
       </div>
     </div>
 
     <div class="card program">
-      <img src="assets/group with whitemen.webp" alt="Sports Tourism" />
+      <img src="assets/group with whitemen.webp" alt="Sports Tourism">
       <div class="card-content">
         <h3>Sports Tourism</h3>
-        <p>Beach tournaments promoting travel, culture, and economic growth.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit impedit ullam incidunt non adipisci suscipit voluptate. Autem accusantium eligendi assumenda quasi, id adipisci quisquam et magni libero sunt beatae incidunt?
+        <p>
+          The Sports Tourism program merges sport with culture and conservation. We host tournaments along Kwale’s stunning beaches and historic sites, attracting teams from across Kenya. These events boost local tourism, create jobs, and promote cultural exchange. By combining competition with travel, we showcase Kwale’s natural beauty while stimulating economic development.
         </p>
+        
       </div>
     </div>
 
-
-
-    <!-- Save Our Sables Campaign Section -->
+    <!-- Campaign with video -->
     <div class="card campaign">
-      <section class="video-section campaign" style="padding: 60px 20px; background-color: #f9f9f9;">
-        <div style="max-width: 1200px; margin: auto;">
-          <h2 style="text-align: center; color: #0f609b; margin-bottom: 20px;">Save Our Sables Campaign</h2>
-          <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1em; color: #555;">
-            Sports have proven to have the ability to champion social causes around the world. Time and time again, sports have been used to rally communities, raise awareness, and fundraise by providing platforms for important issues.
-            <br><br>
-            The <strong>Save Our Sables</strong> campaign is a coordinated initiative to conserve the rare <strong>Roosevelt Sable Antelope (Hippotragus Niger Roosevelt)</strong>, found only in the <strong>Shimba Hills National Reserve</strong>, Kwale County.
-          </p>
-      
-          
-          <blockquote style="font-style: italic; text-align: center; margin-top: 40px; color: #666; max-width: 700px; margin-left: auto; margin-right: auto;">
-            “The Sable is not just an animal. It is a living memory, a breath of the wild soul of Kwale. If it vanishes, a piece of us goes with it.”
-          </blockquote>
-      
-          <div style="margin-top: 60px; text-align: center;">
-            <video controls poster="assets/ChatGPT Image Apr 24, 2025, 12_36_46 PM.png" style="width: 100%; max-width: 800px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-              <source src="assets/WhatsApp Video 2025-03-03 at 11.12.11_93f555c8.mp4" type="video/mp4">
-            </video>
-          </div>
-  
+      <video controls poster="">
+        <source src="assets/WhatsApp Video 2025-03-03 at 11.12.12_1d6d745d.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="card-content">
+        <h3>Save Our Sables</h3>
+        <p>
+          The <strong>Save Our Sables</strong> campaign is a community initiative to protect the endangered
+          <strong>Roosevelt Sable Antelope</strong> found only in <strong>Shimba Hills</strong>, Kwale.
+        </p>
+        <blockquote>
+          “The Sable is not just an animal. It is a living memory, a breath of the wild soul of Kwale.”
+        </blockquote>
+      </div>
     </div>
-  </section>
-  
-</div>
-    
-  </div>
-  <div class="card campaign">
-    <img src="assets/sport safety redcross tent.jpg" alt="Sports Safety Campaign" />
-    <div class="card-content">
-      <h3>Sports Safety Campaign</h3>
-      <p>Education, gear, and injury prevention for young athletes.</p>
+
+    <div class="card campaign">
+      <img src="assets/sport safety redcross tent.jpg" alt="Sports Safety">
+      <div class="card-content">
+        <h3>Sports Safety Campaign</h3>
+        <p>
+          The Sports Safety Campaign focuses on creating safer environments for young athletes across Kwale County. We provide protective gear to teams in need, train coaches in first aid and emergency response, and conduct school visits on injury prevention and wellness. This campaign has reached hundreds of youth, ensuring that sport remains a source of health and joy, not harm.
+        </p>
+        
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
-<div id="footer-placeholder"></div>
-
-
 <script>
-  // Filter logic
-  const buttons = document.querySelectorAll('.tab-button');
+  const tabs = document.querySelectorAll('.tab-button');
   const cards = document.querySelectorAll('.card');
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
+  tabs.forEach(button => {
+    button.addEventListener('click', () => {
+      tabs.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
 
+      const filter = button.dataset.filter;
       cards.forEach(card => {
         card.style.display = (filter === 'all' || card.classList.contains(filter)) ? 'flex' : 'none';
       });
     });
   });
-  
-  fetch('footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    })
-    .catch(error => console.error('Error loading footer:', error));
-
 </script>
 
 </body>
