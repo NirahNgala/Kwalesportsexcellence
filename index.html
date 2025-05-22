@@ -43,18 +43,6 @@
     <a href="gallery.html">Gallery</a>
 </div>
 
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    const overlay = document.getElementById('overlay');
-    const hamburger = document.querySelector('.hamburger');
-    
-    menu.classList.toggle('active');
-    overlay.classList.toggle('active');
-    hamburger.classList.toggle('active');
-  }
-</script>
-
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-content">
@@ -95,8 +83,8 @@
     <div class="section-nav-line"></div>
   
     <div class="section-nav-grid">
-      <a href="involve.html" class="nav-item">Campaigns/Programs</a>
-      <a href="" class="nav-item">Our Team</a>
+      <a href="programs.html" class="nav-item">Campaigns/Programs</a>
+      <a href="about.html#team" class="nav-item">Our Team</a>
     </div>
   
     <div class="section-nav-line"></div>
@@ -129,6 +117,7 @@
   
   
   <!-- Call to Action -->
+   <section class="join">
   <section class="cta" id="get-involved">
     <h2>Join the Movement</h2>
     <p>Your support helps us grow the next generation of champions.</p>
@@ -137,6 +126,7 @@
       <a href="Donate.html" class="dnt">Donate</a>
     </div>
   </section>
+</section>
 
   
 <!-- Contact Details Section -->
@@ -240,7 +230,28 @@
       <p>&copy; 2025 Kwale Sports Excellence. All rights reserved.</p>
     </div>
   </footer>
+
   <script>
+
+    function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('overlay');
+    const hamburger = document.querySelector('.hamburger');
+    const body = document.body;
+
+    const isActive = menu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    hamburger.classList.toggle('active');
+
+    if (isActive) {
+      body.classList.add('no-scroll');
+      console.log('Mobile menu activated — scrolling disabled');
+    } else {
+      body.classList.remove('no-scroll');
+      console.log('Mobile menu closed — scrolling enabled');
+    }
+  }
+
     document.addEventListener("DOMContentLoaded", () => {
   const counters = document.querySelectorAll('.count');
   const speed = 100;
