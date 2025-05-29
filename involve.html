@@ -268,46 +268,15 @@
 </section>
 
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-top">
-    <img src="assets/kwalesportslogo.jpg" alt="Kwale Sports Logo">
-    <p class="tagline">Kwale Sports Excellence — Empowering Youth Through Sports</p>
-  </div>
+<div id="footer-placeholder"></div>
 
-  <div class="footer-columns">
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Programs</a></li>
-        <li><a href="#">Donate</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>Contact Us</h4>
-      <p><i class="fa fa-map-marker-alt"></i> Kwale County, Kenya</p>
-      <p><i class="fa fa-envelope"></i> info@kwalesports.org</p>
-      <p><i class="fa fa-phone"></i> +254 712 345 678</p>
-    </div>
-  </div>
-
-  <div class="footer-col social">
-    <h4>Follow Us</h4>
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>&copy; 2025 Kwale Sports Excellence. All rights reserved.</p>
-  </div>
-</footer>
+<script>
+  fetch("/footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
 
 </body>
 </html>

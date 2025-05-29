@@ -278,6 +278,17 @@
   </div>
 </section>
 
+<div id="footer-placeholder"></div>
+
+<script>
+  fetch("/footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
+
+
 <script>
   const tabs = document.querySelectorAll('.tab-button');
   const cards = document.querySelectorAll('.card');
