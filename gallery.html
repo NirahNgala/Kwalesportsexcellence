@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parallax Gallery</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    header {
+      background: #000;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-style: italic;
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 4rem 2rem;
+    }
+
+    .photo {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transform: translateY(0);
+      transition: transform 0.5s ease;
+    }
+
+    .photo:hover {
+      transform: scale(1.02);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1.1);
+      transition: transform 1s ease;
+    }
+
+    .photo:hover img {
+      transform: scale(1);
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      text-align: center;
+      backdrop-filter: blur(3px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #111;
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Artistic Moments</h1>
+    <p>Where memories meet art</p>
+  </header>
+
+  <section class="gallery">
+    <div class="photo">
+      <img src="assets/WhatsApp Image 2025-06-02 at 14.20.33_e00f376c.jpg" alt="Event 1">
+      <div class="caption">Sunset Beach Rugby</div>
+    </div>
+    <div class="photo">
+      <img src="assets/group with whitemen.webp" alt="Event 2">
+      <div class="caption">Kwale Training Camp</div>
+    </div>
+    <div class="photo">
+      <img src="assets/in office.webp" alt="Event 3">
+      <div class="caption">Athlete Awards Night</div>
+    </div>
+    <div class="photo">
+      <img src="assets/sportssafety.jpg" alt="Event 4">
+      <div class="caption">Youth Soccer League</div>
+    </div>
+    <!-- Add more photos as needed -->
+  </section>
+
+  <footer>
+    &copy; 2025 Your Organization Name. All rights reserved.
+  </footer>
+
+</body>
+</html>

@@ -15,8 +15,10 @@
     .site-footer {
       background: #0f0f0f;
       color: #ddd;
-      padding: 40px 20px 20px;
+      padding: 40px 20px;
       font-family: Arial, sans-serif;
+      font-size: 14px;
+      text-align: center;
     }
 
     .footer-container {
@@ -27,7 +29,8 @@
     }
 
     .footer-about img {
-      width: 140px;
+      height: 80px;
+      border-radius: 50%;
       margin-bottom: 12px;
     }
 
@@ -39,7 +42,7 @@
     .footer-column h4,
     .footer-contact h4 {
       font-size: 16px;
-      color: #fff;
+      color: var(--primary-color);
       margin-bottom: 12px;
     }
 
@@ -93,6 +96,7 @@
     @media (max-width: 600px) {
       .footer-container {
         grid-template-columns: 1fr;
+        justify-content: center;
         gap: 20px;
       }
 
