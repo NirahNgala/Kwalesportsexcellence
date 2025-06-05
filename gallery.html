@@ -125,6 +125,40 @@
       opacity: 1;
       visibility: visible;
     }
+    
+    
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.lightbox-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 0 40px white;
+}
+
+.lightbox-caption {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+
 
     .lightbox img {
       max-width: 90%;
@@ -190,20 +224,20 @@
 
 <!-- 🖼️ Photo Grid -->
 <div class="gallery" id="gallery">
-   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.29.29_528019e6.jpg" alt="">
-  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.17.51_ef9258b9.jpg" alt="Event 1" />
-  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.08_8781d00c.jpg" alt="">
-  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.20.35_0e382f8c.jpg" alt="">
-  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.07_ac80ef64.jpg" alt="" >
+   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.29.29_528019e6.jpg" alt="SPORTS FOR GENDER EQUALITY TWALENGA Launch, April 2024">
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.17.51_ef9258b9.jpg" alt="SPORTS SAFETY - Safety First, 2023" />
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.08_8781d00c.jpg" alt="Emma Bidii - Cyclist" />
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.20.35_0e382f8c.jpg" alt="First Aid Training">
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.07_ac80ef64.jpg" alt="SAVE OUR SABLES - Cycle For Sables, March 2024" >
   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.07_aedefbbb.jpg" alt="">
-  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.08_d3554266.jpg" alt="">
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.08_d3554266.jpg" alt="Riale Mwazani (1st) ">
   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.29.30_f33c4668.jpg" alt="">
   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.29.30_9196be8c.jpg" alt="">
   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.29.29_a0215408.jpg" alt="">
   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.09_95be297a.jpg" alt="">
   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.09_94b4f2ae.jpg" alt="">
-  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.09_7f5a3b9a.jpg" alt="">
-    <img src="assets/images/WhatsApp Image 2025-06-02 at 14.20.34_078c8e8e.jpg" alt="Event 2" />
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.09_7f5a3b9a.jpg" alt="Finish Line!">
+    <img src="assets/images/WhatsApp Image 2025-06-02 at 14.20.34_078c8e8e.jpg" alt="Kwale Sports Excellence Board" />
   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.08_f0263da7.jpg" alt="">
   <!-- Add more images as needed -->
 </div>
@@ -211,8 +245,13 @@
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox">
   <span class="lightbox-close" id="lightboxClose">&times;</span>
-  <img src="" alt="Enlarged image" id="lightboxImg" />
+  <div class="lightbox-content">
+    <img src="" alt="Enlarged image" id="lightboxImg" />
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
 </div>
+
+
 
 <!-- Footer -->
 <div id="footer-placeholder"></div>
@@ -260,6 +299,31 @@
       }
     });
   });
+
+  const lightboxCaption = document.getElementById('lightboxCaption');
+
+gallery.addEventListener('click', (e) => {
+  if (e.target.tagName === 'IMG') {
+    lightboxImg.src = e.target.src;
+    lightboxCaption.textContent = e.target.alt || ''; // fallback if alt is empty
+    lightbox.classList.add('active');
+  }
+});
+
+lightboxClose.addEventListener('click', () => {
+  lightbox.classList.remove('active');
+  lightboxImg.src = '';
+  lightboxCaption.textContent = '';
+});
+
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.remove('active');
+    lightboxImg.src = '';
+    lightboxCaption.textContent = '';
+  }
+});
+
 </script>
 
 </body>
