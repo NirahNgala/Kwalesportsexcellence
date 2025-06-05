@@ -3,123 +3,140 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Parallax Gallery</title>
+  <title>Camera Shutter Gallery</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body, html {
+      height: 100%;
+      font-family: sans-serif;
+      background: #111;
     }
 
-    body {
-      font-family: 'Georgia', serif;
-      background-color: #f2f2f2;
-      color: #333;
-    }
-
-    header {
-      background: #000;
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
-      margin-bottom: 1rem;
-    }
-
-    header p {
-      font-style: italic;
-      font-size: 1.2rem;
-      opacity: 0.8;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      padding: 4rem 2rem;
-    }
-
-    .photo {
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      transform: translateY(0);
-      transition: transform 0.5s ease;
-    }
-
-    .photo:hover {
-      transform: scale(1.02);
-    }
-
-    .photo img {
+    /* Shutter Container */
+    .shutter-wrapper {
+      position: fixed;
+      top: 0; left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: block;
-      transform: scale(1.1);
-      transition: transform 1s ease;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      overflow: hidden;
     }
 
-    .photo:hover img {
-      transform: scale(1);
+    .shutter {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      animation: openShutter 2s ease-in-out forwards;
     }
 
-    .caption {
+    .blade {
       position: absolute;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-      width: 100%;
-      padding: 1rem;
-      font-size: 1rem;
-      text-align: center;
-      backdrop-filter: blur(3px);
+      width: 150px;
+      height: 150px;
+      background: #222;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      transform-origin: bottom right;
+      animation: bladeOpen 2s ease-in-out forwards;
     }
 
-    footer {
-      text-align: center;
+    .blade:nth-child(1) { transform: rotate(0deg) translateY(-50%); animation-delay: 0.1s; }
+    .blade:nth-child(2) { transform: rotate(60deg) translateY(-50%); animation-delay: 0.2s; }
+    .blade:nth-child(3) { transform: rotate(120deg) translateY(-50%); animation-delay: 0.3s; }
+    .blade:nth-child(4) { transform: rotate(180deg) translateY(-50%); animation-delay: 0.4s; }
+    .blade:nth-child(5) { transform: rotate(240deg) translateY(-50%); animation-delay: 0.5s; }
+    .blade:nth-child(6) { transform: rotate(300deg) translateY(-50%); animation-delay: 0.6s; }
+
+    @keyframes bladeOpen {
+      0% { transform: rotate(var(--i)) translateY(-50%) scale(1); }
+      100% { transform: rotate(var(--i)) translateY(-50%) scale(0); }
+    }
+
+    @keyframes openShutter {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    /* Gallery Styles */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 10px;
       padding: 2rem;
-      background-color: #111;
-      color: #ccc;
-      font-size: 0.9rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Artistic Moments</h1>
-    <p>Where memories meet art</p>
-  </header>
+<!-- 🔊 Shutter Sound -->
+<audio id="shutterSound" src="shutter.mp3" preload="auto"></audio>
 
-  <section class="gallery">
-    <div class="photo">
-      <img src="assets/WhatsApp Image 2025-06-02 at 14.20.33_e00f376c.jpg" alt="Event 1">
-      <div class="caption">Sunset Beach Rugby</div>
-    </div>
-    <div class="photo">
-      <img src="assets/group with whitemen.webp" alt="Event 2">
-      <div class="caption">Kwale Training Camp</div>
-    </div>
-    <div class="photo">
-      <img src="assets/in office.webp" alt="Event 3">
-      <div class="caption">Athlete Awards Night</div>
-    </div>
-    <div class="photo">
-      <img src="assets/sportssafety.jpg" alt="Event 4">
-      <div class="caption">Youth Soccer League</div>
-    </div>
-    <!-- Add more photos as needed -->
-  </section>
+<!-- 🔲 Camera Shutter Animation -->
+<div class="shutter-wrapper" id="shutter">
+  <div class="shutter">
+    <div class="blade" style="--i: 0deg"></div>
+    <div class="blade" style="--i: 60deg"></div>
+    <div class="blade" style="--i: 120deg"></div>
+    <div class="blade" style="--i: 180deg"></div>
+    <div class="blade" style="--i: 240deg"></div>
+    <div class="blade" style="--i: 300deg"></div>
+  </div>
+</div>
 
-  <footer>
-    &copy; 2025 Your Organization Name. All rights reserved.
-  </footer>
+<!-- 🖼️ Photo Grid -->
+<div class="gallery" id="gallery">
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.17.51_ef9258b9.jpg" alt="Event 1" />
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.20.34_078c8e8e.jpg" alt="Event 2" />
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.20.35_0e382f8c.jpg" alt="Event 3" />
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.07_ac80ef64.jpg" alt="" >
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.07_aedefbbb.jpg" alt="">
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.07_e00cd029.jpg" alt="">
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.08_8781d00c.jpg" alt="">
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.08_8b0c6d1f.jpg" alt="">
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.29.30_f33c4668.jpg" alt="">
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.29.30_9196be8c.jpg" alt="">
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.29.29_a0215408.jpg" alt="">
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.29.29_528019e6.jpg" alt="">
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.09_95be297a.jpg" alt="">
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.09_94b4f2ae.jpg" alt="">
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.09_7f5a3b9a.jpg" alt="">
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.08_f0263da7.jpg" alt="">
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.08_d3554266.jpg" alt="">
+
+  <!-- Add more images -->
+</div>
+
+<!-- 📜 Script -->
+<script>
+  window.addEventListener("load", () => {
+    const audio = document.getElementById("shutterSound");
+    const shutter = document.getElementById("shutter");
+
+    // Play sound and hide shutter after 2.5s
+    setTimeout(() => {
+      audio.play();
+    }, 500);
+
+    setTimeout(() => {
+      shutter.style.display = "none";
+    }, 2200);
+  });
+</script>
 
 </body>
 </html>
