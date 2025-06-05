@@ -145,13 +145,29 @@
       z-index: 10002;
     }
 
+    .back-arrow {
+  display: inline-block;
+  margin: 20px;
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.back-arrow i {
+  margin-right: 8px;
+}
+
   
   </style>
 </head>
 <body>
 
-<!-- 🔊 Shutter Sound -->
-<audio id="shutterSound" src="shutter.mp3" preload="auto"></audio>
+   <a href="javascript:history.back()" class="back-arrow">
+    <i class="fa fa-arrow-left"></i> Back
+  </a>
+
 
 <!-- 🔲 Camera Shutter Animation -->
 <div class="shutter-wrapper" id="shutter">
@@ -167,29 +183,28 @@
 
 <!-- 📸 Gallery Intro -->
 <section class="gallery-intro">
-  <h2>Moments from Our Events 📸</h2>
-  <p>A visual journey through Kwale Sports Excellence campaigns, tournaments, and community outreach. Click on an image to view in full.</p>
+  <h2></h2>
+  <p><b>A visual journey through Kwale Sports Excellence campaigns, tournaments, and community outreach.</b>
+    <br> <i>Click on an image to view in full</i> </p>
 </section>
 
 <!-- 🖼️ Photo Grid -->
 <div class="gallery" id="gallery">
+   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.29.29_528019e6.jpg" alt="">
   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.17.51_ef9258b9.jpg" alt="Event 1" />
-  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.20.34_078c8e8e.jpg" alt="Event 2" />
-  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.20.35_0e382f8c.jpg" alt="Event 3" />
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.08_8781d00c.jpg" alt="">
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.20.35_0e382f8c.jpg" alt="">
   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.07_ac80ef64.jpg" alt="" >
   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.07_aedefbbb.jpg" alt="">
-  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.07_e00cd029.jpg" alt="">
-  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.08_8781d00c.jpg" alt="">
-  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.08_8b0c6d1f.jpg" alt="">
+  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.08_d3554266.jpg" alt="">
   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.29.30_f33c4668.jpg" alt="">
   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.29.30_9196be8c.jpg" alt="">
   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.29.29_a0215408.jpg" alt="">
-  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.29.29_528019e6.jpg" alt="">
   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.09_95be297a.jpg" alt="">
   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.09_94b4f2ae.jpg" alt="">
   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.09_7f5a3b9a.jpg" alt="">
+    <img src="assets/images/WhatsApp Image 2025-06-02 at 14.20.34_078c8e8e.jpg" alt="Event 2" />
   <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.08_f0263da7.jpg" alt="">
-  <img src="assets/images/WhatsApp Image 2025-06-02 at 14.25.08_d3554266.jpg" alt="">
   <!-- Add more images as needed -->
 </div>
 
@@ -198,6 +213,18 @@
   <span class="lightbox-close" id="lightboxClose">&times;</span>
   <img src="" alt="Enlarged image" id="lightboxImg" />
 </div>
+
+<!-- Footer -->
+<div id="footer-placeholder"></div>
+
+<script>
+  fetch("/footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
+
 
 
 <!-- 📜 Script -->
