@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Camera Shutter Gallery</title>
+  <title>Camera Shutter Gallery | KSE</title>
   <style>
-    /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body, html {
@@ -62,6 +61,24 @@
       to { opacity: 0; visibility: hidden; }
     }
 
+    /* Gallery Introduction */
+    .gallery-intro {
+      text-align: center;
+      color: white;
+      margin: 2rem auto;
+      max-width: 700px;
+      padding: 0 1rem;
+    }
+
+    .gallery-intro h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .gallery-intro p {
+      color: #ccc;
+    }
+
     /* Gallery Styles */
     .gallery {
       display: grid;
@@ -74,6 +91,8 @@
 
     .gallery img {
       width: 100%;
+      height: 250px;
+      object-fit: cover;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.4);
       cursor: pointer;
@@ -126,6 +145,7 @@
       z-index: 10002;
     }
 
+  
   </style>
 </head>
 <body>
@@ -144,6 +164,12 @@
     <div class="blade" style="--i: 300deg"></div>
   </div>
 </div>
+
+<!-- 📸 Gallery Intro -->
+<section class="gallery-intro">
+  <h2>Moments from Our Events 📸</h2>
+  <p>A visual journey through Kwale Sports Excellence campaigns, tournaments, and community outreach. Click on an image to view in full.</p>
+</section>
 
 <!-- 🖼️ Photo Grid -->
 <div class="gallery" id="gallery">
@@ -167,22 +193,19 @@
   <!-- Add more images as needed -->
 </div>
 
-<!-- Lightbox modal -->
+<!-- Lightbox -->
 <div class="lightbox" id="lightbox">
   <span class="lightbox-close" id="lightboxClose">&times;</span>
   <img src="" alt="Enlarged image" id="lightboxImg" />
 </div>
 
+
 <!-- 📜 Script -->
 <script>
   window.addEventListener("load", () => {
-    const audio = document.getElementById("shutterSound");
     const shutter = document.getElementById("shutter");
-
-  
     setTimeout(() => {
       shutter.style.display = "none";
-      flash.style.opacity = 0;
     }, 2200);
 
     // Lightbox logic
@@ -203,7 +226,6 @@
       lightboxImg.src = '';
     });
 
-    // Close lightbox on outside click
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox) {
         lightbox.classList.remove('active');
