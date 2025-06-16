@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cycle for Sables Mass Ride</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: orange;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      border: 1px solid #fff;
+      z-index: 10;
+      transition: background 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .hero {
+      min-height: 100vh;
+      background: url('assets/racing-bikes-438851_1280.jpg') no-repeat center/cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 1rem;
+      max-width: 100%;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #ffffff;
+      color: var(primary--color);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem auto;
+      max-width: 100%;
+    }
+
+    .countdown div {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.7rem 1rem;
+      border-radius: 10px;
+      backdrop-filter: blur(5px);
+      text-align: center;
+      min-width: 60px;
+    }
+
+    .countdown span {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ff8c00;
+    }
+
+    .countdown small {
+      font-size: 0.9rem;
+      color: #fff;
+    }
+
+    .event-card {
+      max-width: 600px;
+      margin: 1.5rem auto;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .event-card h2 {
+      font-size: 1.8rem;
+      color: #000000;
+      margin-bottom: 1rem;
+    }
+
+    .event-card p {
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+    }
+
+    .event-card .highlight {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #000000;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: orange;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: #ff6347;
+    }
+
+    .sponsors {
+      margin-top: 2rem;
+      color: #000;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .sponsors img {
+      height: 60px;
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s ease;
+    }
+
+    .sponsors img:hover {
+      transform: scale(1.15);
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 5rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .countdown {
+        gap: 0.5rem;
+      }
+
+      .countdown div {
+        padding: 0.5rem;
+        min-width: 50px;
+      }
+
+      .countdown span {
+        font-size: 1.2rem;
+      }
+
+      .event-card {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+
+      .btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.8rem;
+      }
+
+      .sponsors img {
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="javascript:history.back()" class="back-button">← Back</a>
+
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Cycle for Sables Mass Ride</h1>
+
+      <div class="countdown">
+        <div><span id="days">0</span><small>Days</small></div>
+        <div><span id="hours">0</span><small>Hours</small></div>
+        <div><span id="minutes">0</span><small>Minutes</small></div>
+        <div><span id="seconds">0</span><small>Seconds</small></div>
+      </div>
+
+      <div class="event-card">
+        <h2>Event Details</h2>
+        <p class="highlight">Date: June 21st, 2025 - 6AM</p>
+        <p>Location: Swahili Beach - Shimba Hills National Reserve</p>
+        <p class="highlight">Distance: 39KM</p>
+        <p class="highlight">Elevation: 360M</p>
+        <p>Contact: +254 715 3337065 || 0708 899 225</p>
+        <p>Activities: Conservation Education, Tree Planting, Game Drive, Lunch & Refreshments</p>
+        <a href="#" class="btn">Register Now</a>
+      </div>
+
+      <div class="sponsors">
+        <img src="assets/kombani_dishes-removebg-preview (1).png" alt="Sponsor Kombani Dishes">
+        <img src="assets/Signature-Almasi-.png" alt="Kenya Wildlife  Service shimba hills National reserve">
+        <img src="assets/swahili beach resort.png" alt="Sponsor Swahili Beach">
+        <img src="assets/Tony-WIld-Sponsor KSE.png" alt="SponsorTony Wild">
+        <img src="assets/glug-removebg-preview.png" alt="Sponsor Glug">
+        <img src="assets/diani bikes.png" alt="Diani Bikes">
+        <img src="assets/Safari-Beach-Hotel.png" alt="Safari-Beach-Hotel">
+        <img src="assets/base titanium.png" alt="Base Titanium">
+    
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const countdown = () => {
+      const countDate = new Date("June 21, 2025 06:00:00").getTime();
+      const now = new Date().getTime();
+      const gap = countDate - now;
+
+      const second = 1000;
+      const minute = second * 60;
+      const hour = minute * 60;
+      const day = hour * 24;
+
+      const textDay = Math.floor(gap / day);
+      const textHour = Math.floor((gap % day) / hour);
+      const textMinute = Math.floor((gap % hour) / minute);
+      const textSecond = Math.floor((gap % minute) / second);
+
+      document.getElementById("days").innerText = textDay;
+      document.getElementById("hours").innerText = textHour;
+      document.getElementById("minutes").innerText = textMinute;
+      document.getElementById("seconds").innerText = textSecond;
+    };
+
+    setInterval(countdown, 1000);
+  </script>
+</body>
+</html>
